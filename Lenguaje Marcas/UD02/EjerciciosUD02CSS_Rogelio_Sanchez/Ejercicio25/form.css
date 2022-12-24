@@ -1,0 +1,65 @@
+/*fieldset.primero{
+    background-color: grey ;
+}
+legend{
+    border-style: solid;
+    background-color: white;
+}
+fieldset.segundo{
+    background-color: rgb(143, 133, 2) ;
+}
+fieldset.tercero{
+    background-color: rgb(224, 88, 88) ;
+}
+input.enviar{
+    margin-top: 2px ;
+    margin-left: 2px;
+}
+input.novisible{
+    visibility: hidden;
+}
+*/
+fieldset{
+
+    border: 1px;
+    border-style: solid;
+    border-radius: 15px;
+}
+fieldset.primero{
+    background-color: gray;
+}
+fieldset.segundo{
+background-color: rgb(243, 243, 156);
+}
+fieldset.tercero{
+background-color: rgb(216, 119, 119);
+}
+div.linea1{
+    display: flex;
+    
+    
+}
+legend{
+    background-color:white;
+    border: 2px;
+    border-radius: 15px;
+    padding: 5px;
+    border-style: solid;
+    
+}
+div.dni{
+    margin-left: 2px;
+}
+div.provincia{
+    margin-right: 105px;
+    margin-left: 2px;
+    
+}
+div.codigo{
+    margin-left: 40px;
+}
+input.enviar{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}

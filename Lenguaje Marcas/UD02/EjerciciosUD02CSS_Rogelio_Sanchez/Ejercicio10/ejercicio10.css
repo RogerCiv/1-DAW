@@ -1,0 +1,9 @@
+h1.subrayado , span.subrayado{
+    color:#00aa00;
+    text-decoration:underline;
+   }
+span.tachado {
+    color:#b3031b;
+    text-decoration:line-through;
+   }
+

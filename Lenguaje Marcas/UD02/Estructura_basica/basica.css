@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header{
+   color: white;
+    padding: 15px;
+   background-color: rgb(27, 24, 24);
+}
+
+nav {
+    display: flex;
+    padding: 10px;
+}
+ul{
+    display: flex;
+  
+}
+li{
+    
+    margin-left: 30px;
+}
+section{
+    padding:5px;
+    background-color:pink ;
+    border: 12px;
+}
+article{
+    margin-left: 20px;
+    border: 2px;
+    border-style: groove;
+    background-color: white;
+    padding: 5px;
+  
+}
+article h2{
+    padding: 5px;
+}
+article p {
+    padding: 5px;
+}
+footer{
+    padding: 15px;
+    color: white;
+    background-color:  rgb(27, 24, 24);
+    position: static;
+    bottom: 0;
+    width: 100%;
+}

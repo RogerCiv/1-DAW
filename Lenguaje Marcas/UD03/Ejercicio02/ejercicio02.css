@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bloque{
+    column-count: 4;
+    background: rgb(190, 187, 187);
+   -moz-column-count: 4;
+   -webkit-column-count:4;
+   column-width: 100px;
+   -moz-column-width: 100px;
+   -webkit-column-width: 100px;
+
+}

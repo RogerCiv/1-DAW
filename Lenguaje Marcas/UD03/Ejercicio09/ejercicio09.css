@@ -1,0 +1,15 @@
+
+.bloque{
+    
+    background: rgb(190, 187, 187);
+    border-radius: 17px;
+    padding: 10px;
+    width: 260px;
+    height: 260px;
+    margin: 50px;
+    transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+}

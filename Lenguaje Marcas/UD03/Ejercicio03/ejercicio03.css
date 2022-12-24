@@ -1,0 +1,17 @@
+
+.bloque{
+    column-count: 4;
+    background: rgb(190, 187, 187);
+    -moz-column-count: 4;
+    -webkit-column-count:4;
+    column-width: 100px;
+    -moz-column-width: 100px;
+    -webkit-column-width: 100px;
+    column-gap: 30px;
+    -moz-column-gap: 30px;
+    -webkit-column-gap: 30px;
+    column-rule: 2px dashed red ;
+    -moz-column-rule: 2px solid red;
+    -webkit-column-rule: 2px solid red;
+
+}

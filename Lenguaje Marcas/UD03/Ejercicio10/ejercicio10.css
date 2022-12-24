@@ -1,0 +1,19 @@
+.bloque{
+    
+    background: rgb(190, 187, 187);
+    border-radius: 17px;
+    padding: 10px;
+    width: 260px;
+    height: 260px;
+    margin: 50px;
+    transform-origin: 10% 60%;
+    -ms-transform-origin: 10% 60%;
+    -webkit-transform-origin: 10% 60%;
+    -moz-transform-origin: 10% 60%;
+    -o-transform-origin: 10% 60%;
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+}

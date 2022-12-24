@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+
+.bloque{
+    margin-top: 20vh;
+    background: rgb(189, 173, 173);
+    width:40vh;
+    transform: scaleY(0.5) skewY(45deg) ;
+    -moz-transform: scaleY(0.5) skewY(45deg) ;
+    -o-transform: scaleY(0.5) skewY(45deg);
+    -ms-transform: scaleY(0.5) skewY(45deg);
+    -webkit-transform: scaleY(0.5) skewY(45deg);
+    
+   
+}

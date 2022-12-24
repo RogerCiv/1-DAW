@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 25</title>
+</head>
+<body>
+    <form action="">
+    <div>
+        <fieldset class="primero">
+            <legend>Datos Personales</legend>
+        <div class="linea1">
+            <div>
+                <label for="">Nombre</label><br>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Apellidos</label><br>
+                <input type="text">
+            </div>
+            <div class="dni">
+                <label for="">DNI</label><br>
+                <input type="text">
+            </div>
+        </div>
+        <div class="linea1">
+            <div>
+                <label for="">Localidad Nacimiento</label><br>
+                <input type="text">
+            </div>
+            <div class="provincia">
+                <label for="" class="provincia">Provincia</label><br>
+                <select name="Provincia" id="">
+                    <option value="Granada">Granada</option>
+                    <option value="almeria">Almeria</option>
+                    <option value="Jaen">Jaén</option>
+                    <option value="malaga">Málaga</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Fecha Nacimiento</label><br>
+                <input type="date">
+            </div>
+        </div>
+        <div class="linea1">
+            <div>
+                <label for="">Direccion</label><br>
+                <input type="text" size="40px">
+            </div>
+            
+            <div class="codigo">
+                <label for="">Codigo Postal</label><br>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div>
+        <fieldset class="segundo">
+            <legend>
+                Forma de acceso
+            </legend>
+            <ul type="none">
+                <input type="radio" name="directo2" value="direct">
+
+                <ul>
+                    <li type="none">
+                        <input type="radio" name="directo" value="direct">
+                        <label for="">Bachillerato LOGSE,Modalidad</label>
+                        <input type="text">
+                    </li>
+                    <li type="none">
+                        <input type="radio" name="directo">
+                        <label for="">Bachillerato Experimental</label>
+                        
+                    </li>
+                    <li type="none">
+                        <input type="radio" name="directo">
+                        <label for="">COU Opcion</label>
+                        <input type="text">
+                    </li>
+                    <li type="none" name="directo">
+                        <input type="radio" name="directo">
+                        <label for="">FP2</label>
+
+                    </li>
+                    <li type="none">
+                        <input type="radio" name="directo">
+                        <label for="">Otros (Especifique)</label>
+                        <input type="text">
+                    </li>
+                </ul>
+
+            </ul>
+            <ul type="none">
+                <input type="radio" name="directo2" value="pruebas">
+                <label for="">Prueba Libre</label>
+            </ul>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset class="tercero">
+            <legend>
+                Documentos adjuntados
+            </legend>
+            <div>
+                <input type="checkbox">
+                <label for="" >Fotocopia DNI</label>
+                <input type="checkbox">
+                <label for="">Certificado digital</label>
+                
+            </div>
+            <div>
+                <input type="checkbox">
+                <label for="">Otros Documentos (especifique cual)</label>
+                <input type="text">
+            </div>
+        </fieldset>
+    </div>
+    </fieldset>
+    <input class="enviar" type="button" value="Enviar">
+</form>
+</body>
+</html>

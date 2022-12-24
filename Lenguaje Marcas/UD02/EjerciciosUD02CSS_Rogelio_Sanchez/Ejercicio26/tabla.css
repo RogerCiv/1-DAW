@@ -1,0 +1,34 @@
+table{
+    width: auto; 
+    background-image: url(huellas.jpg);
+    
+    text-align: center;
+    border-style: groove;
+    border-color: rgb(247, 247, 156);
+    
+   
+    }
+  img{
+   
+  }
+   tr{
+    border-style: groove;
+   }
+   td{
+    border-style: initial;
+   font-weight: bold;
+    border-style: groove;
+   }
+   td.maroon{
+    background-color: maroon;
+    color: white;
+   }
+
+   td.yellow{
+    background-color: rgb(219, 170, 8);
+    font-weight: bold;
+    
+   }
+   td.orange{
+    background-color: orangered;
+   }

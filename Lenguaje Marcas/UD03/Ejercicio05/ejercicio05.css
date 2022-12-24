@@ -1,0 +1,11 @@
+
+.bloque{
+
+    box-shadow: -25px -12px 20px;
+    background: rgb(190, 187, 187);
+    border-radius: 17px;
+    padding: 10px;
+    width: 20%;
+    margin: 20px;
+}
+

@@ -33,7 +33,7 @@ public class MarcadorBaloncesto {
     // visitante, tienen los puntos que se reciben como parámetros y se juega en la
     // fecha
     // recibida como parámetro.
-    public MarcadorBaloncesto(String nL, int pL, String nVI, int pV, LocalDate fecha) {
+    private MarcadorBaloncesto(String nL, int pL, String nVI, int pV, LocalDate fecha) {
         nombreLocal = nL;
         nombreVisitante = nVI;
         puntosLocal = pL;

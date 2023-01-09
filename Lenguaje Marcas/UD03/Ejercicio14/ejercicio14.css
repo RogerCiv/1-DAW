@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: whitesmoke;
+    margin: 20%;
+    
+}
+
+.recuadro {
+    transform: rotate(50deg);
+    -moz-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    -webkit-transform: rotate(50deg);
+    background-image: url(../img/logo.png),  url(../img/logo.png),
+    url(../img/logo.png), url(../img/fondo.jpg);
+    background-size: 100px 100px, 100px 100px, 100px 100px, 700px 450px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%,
+    100% 50%,
+    0% 50%,
+    0% 0%;
+    width: 60vw;
+    max-width: 600px;
+    height: 40vh;
+    max-height: 490px;
+    text-align: center;
+    border-radius: 15px;
+    display: flex;
+}
+p{
+    padding:5vh;
+    max-height: 20vh;
+    color: red;
+    opacity: 0.4;
+    text-align: justify;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+
+
+
+
+

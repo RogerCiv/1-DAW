@@ -1,0 +1,28 @@
+body{
+    background-color: whitesmoke;
+    margin: 350px;
+}
+
+.recuadro {
+    transform: rotate(50deg);
+    -moz-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    -webkit-transform: rotate(50deg);
+    background-image: url(../img/logo.png), url(../img/fondo.jpg);
+    background-size: 100px 100px, 60vw 40vh;
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 400px;
+    text-align: center;
+    border-radius: 15px;
+}
+p{
+    padding: 12px;
+    color: red;
+    opacity: 0.4;
+    text-align: justify;
+    position: absolute;
+    z-index: 1;
+
+}

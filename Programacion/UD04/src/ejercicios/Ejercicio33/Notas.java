@@ -36,7 +36,7 @@ public class Notas {
         for(Double i : notas){
             total += i;
         }
-        return (double) total/getTotalNotas();
+        return  total/notas.size();
     }
 
     /*

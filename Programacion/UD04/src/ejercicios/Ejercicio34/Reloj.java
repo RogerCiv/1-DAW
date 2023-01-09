@@ -29,7 +29,7 @@ public class Reloj {
          * }
          * return respuesta;
          */
-        return this.hora.isAfter(LocalTime.of(20, 0, 0)) &&
+        return this.hora.isAfter(LocalTime.of(20, 0, 0)) ||
                 this.hora.isBefore(LocalTime.of(8, 0, 0));
     }
 

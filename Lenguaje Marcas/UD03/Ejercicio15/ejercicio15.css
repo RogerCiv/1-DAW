@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.recuadro{
+    background-origin: padding-box;
+    border: 15px solid aqua;
+    padding: 20px;
+    background-image: url(../img/logo.png);
+    background-color: rgb(199, 160, 199);
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    width: 60vw;
+    height: 40vh;
+    margin: 80px;
+}

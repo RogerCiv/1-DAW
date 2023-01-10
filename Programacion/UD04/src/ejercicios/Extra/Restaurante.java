@@ -2,6 +2,7 @@ package ejercicios.Extra;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,9 +19,10 @@ public class Restaurante {
     //// crea un restaurante con estos platos: bocadillo (5€), sopa(8€), filete(10€)
 
     public Restaurante(String n){
-        this(n,Map.of("Bocadillo",5,
+        //para volver mutable el map.of , crear new hashmap<>
+        this(n,new HashMap<>(Map.of("Bocadillo",5,
         "sopa",8,
-        "filete",10));
+        "filete",10)));
     }
 
     // devuelve el nombre del restaurante

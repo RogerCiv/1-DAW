@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#recuadro{
+    background-color: gray;
+    width: 40vw;
+    height: 30vh;
+    margin: 10vw;
+    border-radius: 10px;
+    transition: width , height 3s;
+    -moz-transition:width , height 3s ;
+    -webkit-transition: width , height 3s;
+}
+
+#recuadro:hover{
+    width: 20vw;
+    height: 15vh;
+}

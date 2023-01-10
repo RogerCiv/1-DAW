@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#recuadro{
+    width: 40vw;
+    height: 30vh;
+    background-color: coral;
+    color: red;
+    position: relative;
+    margin-left: 10vw;
+    animation-name: animacion;
+    animation-duration: 10s;
+    animation-iteration-count: 3;
+
+}
+
+@keyframes animacion {
+
+    from{
+        top: 0px;
+    }
+    to{
+        top: 200px;
+        color: blue;
+    }
+    
+}

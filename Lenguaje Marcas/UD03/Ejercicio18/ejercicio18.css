@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#recuadro{
+    width: 400px;
+    height: 300px;
+    background-color: coral;
+    color: red;
+    position: relative;
+    margin-left: 10vw;
+    animation-name: animacion;
+    animation-duration: 3s;
+
+}
+
+@keyframes animacion {
+
+    from{
+        top: 0px;
+    }
+    to{
+        top: 200px;
+        color: blue;
+    }
+    
+}

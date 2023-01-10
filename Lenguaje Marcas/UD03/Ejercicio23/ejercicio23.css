@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#recuadro{
+    width: 40vw;
+    height: 30vh;
+    background-color: teal;
+    margin: 10vw;
+    padding: 20px;
+    animation: animacion 10s infinite ;
+    text-align: justify;
+}
+
+@keyframes animacion {
+    0%{
+        color: red;
+    }
+    20%{
+        color: green;
+    }
+    40%{
+        color: gold;
+    }
+    60%{
+        color: darkblue;
+    }
+    80%{
+        color: blue;
+    }
+    100%{
+        color: deeppink;
+    }
+}

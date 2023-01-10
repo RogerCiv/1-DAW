@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.recuadro{
+    width: 40vw;
+    height: 30vh;
+    background-color: salmon;
+    margin: 10vw;
+    animation: animacion 2s infinite alternate ;
+    animation-play-state: paused;
+    position: relative;
+}
+
+.recuadro:hover{
+    animation-play-state: running;
+}
+
+@keyframes animacion {
+    from{
+        left: 0px;
+    }
+    to{
+        left: 100px;
+    }
+}

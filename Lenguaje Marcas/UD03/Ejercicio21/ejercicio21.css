@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.recuadro{
+    width: 25vw;
+    height: 25vh;
+    background-color: palevioletred;
+    margin: 10vw;
+    animation: animacion 2s infinite alternate ;
+    animation-play-state: paused;
+    
+}
+
+.recuadro:hover{
+    animation-play-state: running;
+}
+
+@keyframes animacion {
+    from{
+        box-shadow: 0;
+    }
+    to{
+        border-radius: 25px;
+        box-shadow: 10px 10px 0px 5px black;
+    }
+}
+
+/*
+box-shadow: 10px 10px 0px 10px #333;
+*/

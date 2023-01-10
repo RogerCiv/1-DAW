@@ -32,7 +32,7 @@ public class Notas {
         if (notas.isEmpty()) {
             throw new IllegalStateException("No hay notas para calcular la nota media");
         }
-        int total = 0;
+        double total = 0;
         for(Double i : notas){
             total += i;
         }

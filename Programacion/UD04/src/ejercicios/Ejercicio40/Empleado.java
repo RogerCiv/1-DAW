@@ -42,7 +42,7 @@ public record Empleado(String nombre, List<Empleado> subordinados) {
             // siendo recorrido, pero añadiendo 1 a la cantidad de tabs (eso se hace para
             // que al
             // mostrar en pantalla la salida parezca un árbol)
-            i.mostrarSubordinados(tabs);
+            i.mostrarSubordinados(tabs+1);
         }
     }
 }

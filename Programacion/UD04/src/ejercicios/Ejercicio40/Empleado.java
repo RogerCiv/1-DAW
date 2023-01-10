@@ -3,8 +3,9 @@ package ejercicios.Ejercicio40;
 import java.util.ArrayList;
 import java.util.List;
 
+// El constructor principal declara e inicializa las propiedades sin más
 public record Empleado(String nombre, List<Empleado> subordinados) {
-    // El constructor principal declara e inicializa las propiedades sin más
+    
 
     // El segundo constructor crea un empleado que no tiene subordinados (su lista
     // de

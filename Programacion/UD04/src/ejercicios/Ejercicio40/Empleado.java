@@ -19,6 +19,7 @@ public record Empleado(String nombre, List<Empleado> subordinados) {
     // empleado y
     // llama al segundo método mostrarSubordinados pasando un 1 como parámetro
     public void mostrarSubordinados() {
+        System.out.println(nombre);
         mostrarSubordinados(1);
     }
 

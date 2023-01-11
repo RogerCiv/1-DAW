@@ -4,6 +4,7 @@ package ejercicios.Ejercicio39;
 //El constructor principal declara las propiedades y les asigna el valor solamente si son 
 //positiva
 public record DepositoAguaInmutable(int capacidadActual, int capacidadMaxima) {
+    //extension del constructor prinicpal. Sirve para poner protecciones.
     public DepositoAguaInmutable{
         if(capacidadActual < 0 && capacidadMaxima < 0 && capacidadActual> capacidadMaxima){
             throw new IllegalArgumentException("No puede tener valor negativo");
@@ -18,21 +19,21 @@ public record DepositoAguaInmutable(int capacidadActual, int capacidadMaxima) {
     //añadirLitro devuelve un depósito de agua que tiene las mismas características del que 
     //estamos programando, pero con un litro más de agua 
     public DepositoAguaInmutable añadirLitro(){
-        DepositoAguaInmutable nuevo = new DepositoAguaInmutable(this.capacidadActual+1, capacidadMaxima);
-        return nuevo;
+       // DepositoAguaInmutable nuevo = new DepositoAguaInmutable(this.capacidadActual+1, capacidadMaxima);
+        return new DepositoAguaInmutable(this.capacidadActual+1, capacidadMaxima);
     }
     //retirarLitro devuelve un depósito de agua que tiene las mismas características del que 
     //estamos programando, pero con un litro más de agua 
     public DepositoAguaInmutable retirarLitro(){
-        DepositoAguaInmutable nuevo = new DepositoAguaInmutable(this.capacidadActual+1, capacidadMaxima);
-        return nuevo;
+       // DepositoAguaInmutable nuevo = new DepositoAguaInmutable(this.capacidadActual+1, capacidadMaxima);
+        return new DepositoAguaInmutable(this.capacidadActual-1, capacidadMaxima);
     }
     //getPorcentaje devuelve el porcentaje del depósito que está lleno
     public int getPorcentaje(){
-        int porcentaje = 0;
-        if(capacidadActual == capacidadMaxima){
-             porcentaje =  (capacidadActual / capacidadMaxima)*100;
-        }
+        
+      
+         int  porcentaje =  this.capacidadActual * 100 / this.capacidadMaxima;
+        
         return porcentaje;
     }
 

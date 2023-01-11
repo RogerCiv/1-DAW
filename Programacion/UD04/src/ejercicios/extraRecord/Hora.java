@@ -30,9 +30,12 @@ public record Hora(int hora, int minuto, int segundo) {
          * int nuevoM = (total % 60) % 60;
          * return new Hora(nuevaH, nuevoM, segundos);
          */
+        /*
         LocalTime horaU = toLocalTime();
-        horaU = horaU.plusSeconds(segundos);
+        horaU = horaU.plusSeconds(segundos); 
         return new Hora(horaU.getHour(), horaU.getMinute(), horaU.getSecond());
+       */ 
+       return new Hora(toLocalTime().getHour(), toLocalTime().getMinute(), toLocalTime().getSecond());
 
     }
 

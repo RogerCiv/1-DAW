@@ -5,13 +5,28 @@
 body{
 display: flex;
 justify-content: center;
+background: linear-gradient(50deg,#fdf9c4,#ffda9e,#c5c6c8,#b2e2f2);
+background-size: 500% 400%;
+position: relative;
+animation: gradiente 8s ease-in-out infinite;
+}
+@keyframes gradiente {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
 .indice{
-    background-color: lightsalmon;
+    background-color: transparent;
     width: 20vw;
-    
+    color: rebeccapurple;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-self: center;
     margin-top: 30px;
     animation: rotate 5s infinite;
@@ -20,6 +35,9 @@ justify-content: center;
 .indice:hover{
     animation-play-state: paused;
 }
+/*
+darkolivegreen,salmon,rgb(204, 133, 204),rebeccapurple)
+
 @keyframes rotate {
     0%{
         transform: rotate3d();
@@ -31,17 +49,29 @@ justify-content: center;
         transform: rotate3d(0,1,0,360deg);
     }
 }
+*/
+
 ul li {
     list-style-type: none;
-    margin: 10px;
+    margin: 24px;
 }
 
 ul li a {
     text-decoration: none;
-    color: crimson;
    
+    
+}
+a:link{
+    color: #c63637;
+}
+a:hover{
+    color: #f0a2f6;
+}
+a:visited{
+    color: rgb(15, 18, 221);
 }
 
+/*
 ul{
     animation: ul 2s infinite linear ;
     animation-play-state: running;
@@ -101,3 +131,4 @@ a{
         color: cornflowerblue;
     }
 }
+*/

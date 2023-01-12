@@ -5,6 +5,8 @@
 .bloque{
     column-count: 4;
     background: rgb(190, 187, 187);
+    border-radius: 15px;
+    padding: 10px;
    -moz-column-count: 4;
    -webkit-column-count:4;
 }

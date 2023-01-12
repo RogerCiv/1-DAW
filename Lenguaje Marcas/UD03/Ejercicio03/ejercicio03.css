@@ -13,5 +13,7 @@
     column-rule: 2px dashed red ;
     -moz-column-rule: 2px solid red;
     -webkit-column-rule: 2px solid red;
+    border-radius: 15px;
+    padding: 10px;
 
 }

@@ -11,11 +11,26 @@ justify-content: center;
     width: 20vw;
     
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-self: center;
     margin-top: 30px;
+    animation: rotate 5s infinite;
+    animation-play-state: running;
 }
-
+.indice:hover{
+    animation-play-state: paused;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate3d();
+    }
+    50%{
+        transform: rotate3d(0,1,0,180deg);
+    }
+    100%{
+        transform: rotate3d(0,1,0,360deg);
+    }
+}
 ul li {
     list-style-type: none;
     margin: 10px;
@@ -23,6 +38,66 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    color: blue;
+    color: crimson;
+   
 }
 
+ul{
+    animation: ul 2s infinite linear ;
+    animation-play-state: running;
+    position: relative;
+    
+    
+}
+
+ul:hover{
+    animation-play-state: paused;
+}
+
+@keyframes ul {
+
+    0%{
+        left: 0px;
+    }
+    25%{
+        left: 100px;
+     
+    }
+    50%{
+        left: 150px;
+        color: green;
+    }
+    75%{
+        left: 100px;
+        color: magenta;
+    }
+    100%{
+        left: 0px;
+        color: crimson;
+    }
+}
+
+a{
+    animation: links 5s infinite linear ;
+}
+
+@keyframes links {
+    0%{
+        color:crimson;
+    }
+    20%{
+        color: rgb(235, 117, 21);
+    }
+    40%{
+        color: deeppink;
+    }
+    60%{
+        color:olive ;
+    }
+    80%{
+        color: springgreen;
+    }
+    100%{
+        color: cornflowerblue;
+    }
+}

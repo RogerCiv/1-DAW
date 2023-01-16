@@ -18,6 +18,7 @@ public class Monedero implements Adinerado{
     }
 
     @Override
+    
     public boolean añadirDinero(int cantidad) {
         // TODO Auto-generated method stub
         /*return this.dinero + cantidad <= 1000;*/

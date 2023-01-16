@@ -20,7 +20,7 @@ public class Boligrafo {
      */
     public Boligrafo(CapaTexto ct) {
         this.color = 0;
-        this.ct = ct;
+        ct.setColorTexto(COLORES[0]);
     }
 
     /*
@@ -29,7 +29,7 @@ public class Boligrafo {
      */
 
      public void setColor(int n){
-        this.color = n;
+       ct.setColorTexto(COLORES[n]);
      }
      /*
       * El método escribir recibe un String y lo escribe en la capa de texto con el color activo 
@@ -37,7 +37,6 @@ public class Boligrafo {
       */
 
      public void escribir(String texto){
-        ct.setColorTexto(COLORES[color]);
         ct.print(texto);
      }
      /*

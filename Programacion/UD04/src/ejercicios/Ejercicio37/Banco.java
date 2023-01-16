@@ -12,26 +12,31 @@ public class Banco implements Adinerado {
     @Override
     public double getDineroTotal() {
         // TODO Auto-generated method stub
-        return dinero;
+        return this.dinero;
     }
 
     @Override
+    //añadirDinero recibe una cantidad e incrementa la cantidad de dinero del objeto.
+    //Devuelve false si no es posible añadir la cantidad de dinero al objeto.
     public boolean añadirDinero(int cantidad) {
         // TODO Auto-generated method stub
-        this.dinero += cantidad;
-        return true;
+        boolean respuesta = false;
+        if(this.dinero> 0){
+            this.dinero += cantidad;
+            respuesta = true;
+        }
+        return respuesta;
     }
 
     @Override
     public boolean retirarDinero(int cantidad) {
         // TODO Auto-generated method stub
-      /*
+      
       boolean respuesta = false;
         if(this.dinero >= cantidad){
+            this.dinero -= cantidad;
             respuesta = true;
         }
         return respuesta;
-      */ 
-      return this.dinero>= cantidad;
     }
 }

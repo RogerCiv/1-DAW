@@ -3,6 +3,8 @@ package ejercicios.Ejercicio37;
 public interface Adinerado {
     //Ejercicio 38
     public static int TRANSFERENCIA_MINIMA = 1526;
+
+
     //getDineroTotal devuelve la cantidad de dinero que tenga el objeto
     public double getDineroTotal();
     //añadirDinero recibe una cantidad e incrementa la cantidad de dinero del objeto.
@@ -24,7 +26,7 @@ public interface Adinerado {
 
     public default boolean transferirHacia(Adinerado receptor, double cantidad){
         boolean respuesta = false;
-        if(cantidad > getDineroTotal() && cantidad >= TRANSFERENCIA_MINIMA){
+        if(cantidad < getDineroTotal() && cantidad >= TRANSFERENCIA_MINIMA){
             
             retirarDinero( (int)cantidad);
             receptor.añadirDinero((int) cantidad);
@@ -49,7 +51,8 @@ public interface Adinerado {
     //transferir ingresa en el objeto “emisor” la cantidad de dinero que se extrae del objeto
     //“receptor”. El método devuelve false igual que el anterior.
     public static boolean transferir(Adinerado emisor, Adinerado receptor, double cantidad){
-        boolean respuesta = false;
+       /*
+       boolean respuesta = false;
         if(cantidad >= TRANSFERENCIA_MINIMA && cantidad <= emisor.getDineroTotal()){
             receptor.retirarDinero((int) cantidad);
             emisor.añadirDinero((int) cantidad);
@@ -57,5 +60,8 @@ public interface Adinerado {
         }
     
         return respuesta;
+    }
+       */ 
+        return  emisor.transferirHacia(receptor, cantidad);
     }
 }

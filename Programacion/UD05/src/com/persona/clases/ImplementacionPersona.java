@@ -16,26 +16,35 @@ public class ImplementacionPersona implements Persona {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
-        if (comprobarEdad()) {
+        if (!comprobarEdad()) {
+            throw new IllegalArgumentException("Edad incorrecta");
+        }else {
             this.edad = edad;
         }
-
         this.direccion = new Direccion(calle, ciudad, Pais);
         this.telefono = telefono;
-        this.estadoCivil = ec;
+        if(!comprobarEstadoCivil()){
+            throw new IllegalArgumentException("Estado civil incorrecto");
+        }else{
+            this.estadoCivil = ec;
+        }
+        
         this.pareja = pareja;
     }
 
     private boolean comprobarEdad() {
-        if (edad >= 0 && edad < 18) {
-            throw new IllegalArgumentException("Edad incorrecta");
-        } else {
-            return true;
-        }
+        
+        return edad >= 0 ;
     }
 
     private boolean comprobarEstadoCivil() {
-        return false;
+        boolean respuesta = true;
+        if(pareja.getPareja() != null && pareja.getEstadoCivil().equals(EstadoCivil.SOLTERO)){
+            respuesta = false;
+        }else if (pareja.getPareja() == null && pareja.getEstadoCivil().equals(EstadoCivil.CASADO)){
+            respuesta = false;
+        }
+        return respuesta;
     }
 
     @Override

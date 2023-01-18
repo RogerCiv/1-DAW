@@ -45,7 +45,7 @@ Partiendo de dichas tablas, realizar los siguientes apartados:
 
 1. Después de realizar el proceso de análisis y diseño de la **BD** para un banco, el modelo relacional resultante es el siguiente:
 
-![Examen](Ex.png)
+![Examen](ex.png)
 
 Escribe las sentencias de creación de la BD y de las tablas en el orden apropiado utilizando el lenguaje SQL (1 punto la creación de la BD y la estructura básica de las tablas + 1 punto la definición correcta de las claves primarias y foráneas). Debes tener en cuenta lo siguiente:  
 

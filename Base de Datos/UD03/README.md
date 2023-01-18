@@ -2,7 +2,7 @@
 
 ## **Ejercicio 04**
 
-![[Ejercicio04.png]]
+![Ejercicio04](Ejercicio04.png)
 
 Partiendo de dichas tablas, realizar los siguientes apartados:  
 **A. Escribir las sentencias de creación de la BD y de las tablas en el orden apropiado utilizando el lenguaje SQL. Se debe tener en cuenta lo siguiente:**
@@ -36,16 +36,16 @@ Partiendo de dichas tablas, realizar los siguientes apartados:
 
 ## **Ejemplo Adicional**
 
-![[Adicional.png]]
+![Adicional](Adicional.png)
 
-![[Adicional2.png]]
+![Adicional](Adicional2.png)
 
 
 ## **Ejemplo Examen**
 
-1. Después de realizar el proceso de análisis y diseño de la BD para un banco, el modelo relacional resultante es el siguiente:
+1. Después de realizar el proceso de análisis y diseño de la **BD** para un banco, el modelo relacional resultante es el siguiente:
 
-![[ex.png]]
+![Ex](Ex.png)
 
 Escribe las sentencias de creación de la BD y de las tablas en el orden apropiado utilizando el lenguaje SQL (1 punto la creación de la BD y la estructura básica de las tablas + 1 punto la definición correcta de las claves primarias y foráneas). Debes tener en cuenta lo siguiente:  
 

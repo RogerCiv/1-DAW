@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class CatalogoTitulosArchivos implements CatalogoTitulos {
 
@@ -21,9 +22,13 @@ public class CatalogoTitulosArchivos implements CatalogoTitulos {
         Reader r = new FileReader(new File(ruta));
         BufferedReader file = new BufferedReader(r);
 
-        while(file.lines() != null){
-            titulos.add(extraerTitulo(file.readLine()));
-        
+        String linea = null;
+
+        while(linea != null){
+            linea = file.readLine();
+            Titulo titu = extraerTitulo(linea);
+            titulos.add(titu);
+
         }
         file.close();
         
@@ -66,6 +71,15 @@ public class CatalogoTitulosArchivos implements CatalogoTitulos {
         // TODO Auto-generated method stub
 
         return titulos.add(new TituloArchivo(dni, nombre, estudio, estado));
+    }
+
+    public Titulo getTitulo(String dni) {
+        for (Titulo i : titulos) {
+            if (i.getDNI().equals(dni)) {
+                return i;
+            }
+        }
+        throw new NoSuchElementException("No se encontro el DNI: " + dni);
     }
 
 }

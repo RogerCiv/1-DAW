@@ -1,6 +1,6 @@
 package com.persona.clases;
 
-import com.persona.clases.*;
+
 
 public class PersonaBuilder {
     private String nombre;
@@ -63,7 +63,7 @@ public class PersonaBuilder {
 
     public Persona build(){
 
-        return new ImplementacionPersona();
+        return new ImplementacionPersona(nombre,apellido1,apellido2,edad,calle,ciudad,pais,telefono,estadoCivil,pareja);
     }
 
 }

@@ -11,7 +11,7 @@ public class ImplementacionPersona implements Persona {
     private EstadoCivil estadoCivil;
     private Persona pareja;
 
-    public void Persona(String nombre, String apellido1, String apellido2, int edad, String calle, String ciudad,
+    public  ImplementacionPersona(String nombre, String apellido1, String apellido2, int edad, String calle, String ciudad,
             String Pais, String telefono, EstadoCivil ec, Persona pareja) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -38,13 +38,14 @@ public class ImplementacionPersona implements Persona {
     }
 
     private boolean comprobarEstadoCivil() {
-        boolean respuesta = true;
-        if(pareja.getPareja() != null && pareja.getEstadoCivil().equals(EstadoCivil.SOLTERO)){
-            respuesta = false;
-        }else if (pareja.getPareja() == null && pareja.getEstadoCivil().equals(EstadoCivil.CASADO)){
-            respuesta = false;
-        }
-        return respuesta;
+        /*
+        return pareja.getPareja() != null && pareja.getEstadoCivil().equals(EstadoCivil.SOLTERO) || 
+        pareja.getPareja() == null && pareja.getEstadoCivil().equals(EstadoCivil.CASADO) ;
+      */
+        return getPareja()!= null && getEstadoCivil().equals(EstadoCivil.CASADO) || 
+        getPareja() == null && getEstadoCivil().equals(EstadoCivil.SOLTERO);
+    
+
     }
 
     @Override

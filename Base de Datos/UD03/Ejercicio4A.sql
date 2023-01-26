@@ -43,22 +43,3 @@ CREATE TABLE matricula (
     FOREIGN KEY (expediente_alumno) REFERENCES alumno(num_expediente),
     FOREIGN KEY (cod_modulo) REFERENCES modulo(codigo)
 );
-
--- APARTADO B 
-
-
-ALTER TABLE profesor  MODIFY sueldo DECIMAL(6,2);
-
-ALTER TABLE modulo DROP descripcion;
-
-ALTER TABLE profesor ADD cargo VARCHAR(50);
-
-ALTER TABLE matricula MODIFY nota DECIMAL(6,2) UNSIGNED NOT NULL CHECK (nota BETWEEN 0 AND 10);
-
-CREATE INDEX idx_alumno_nombre ON alumno (nombre);
-RENAME TABLE modulo TO  asignatura;
-
-ALTER TABLE profesor CHANGE sueldo salario DECIMAL(6,2) CHECK (sueldo BETWEEN 1500 AND 2000)
-
--- No
-ALTER TABLE alumno  MODIFY sexo  CHAR(1) CHECK ( sexo = 'H' OR sexo = 'M');

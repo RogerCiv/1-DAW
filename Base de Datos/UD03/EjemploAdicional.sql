@@ -11,7 +11,7 @@ CREATE TABLE autor (
 
 CREATE TABLE libro (
     ISBN CHAR(17) PRIMARY KEY,
-    numeroPagina CHAR(5),
+    numeroPagina SMALLINT UNSIGNED,
     nombre VARCHAR(40) NOT NULL,
     tematica VARCHAR(30) NOT NULL
 );
@@ -26,16 +26,17 @@ CREATE TABLE escribir (
 
 
 CREATE TABLE ejemplar (
-    idEjemplar INT PRIMARY KEY,
+    idEjemplar INT UNSIGNED,
     estadoConservacion VARCHAR(70) NOT NULL,
     localizacion VARCHAR(50) NOT NULL,
     ISBN CHAR(17),
+    PRIMARY KEY (idEjemplar, ISBN)
     FOREIGN KEY (ISBN) REFERENCES libro(ISBN)
 );
 
 CREATE TABLE usuario (
-    idUsuario SMALLINT PRIMARY KEY,
-    nif CHAR(9) UNIQUE,
+    idUsuario SMALLINT UNSIGNED PRIMARY KEY,
+    nif CHAR(9) UNIQUE NOT NULL,
     nombre VARCHAR(40),
     apellido VARCHAR(40) NOT NULL,
     direccion VARCHAR(100),
@@ -43,13 +44,13 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE prestar (
-    idUsuario SMALLINT,
-    idEjemplar SMALLINT,
+    idUsuario SMALLINT UNSIGNED,
+    idEjemplar INT UNSIGNED,
     ISBN CHAR(17)
     fechaPrestamo DATE  ,
     fechaDevolucion DATE,
     PRIMARY KEY (idUsuario, idEjemplar, ISBN, fechaPrestamo), 
     FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
-    FOREIGN KEY (idEjemplar) REFERENCES ejemplar(idEjemplar),
-    FOREIGN KEY (ISBN) REFERENCES libro(ISBN)
+    FOREIGN KEY (idEjemplar,ISBN) REFERENCES ejemplar(idEjemplar, ISBN),
+    
 );

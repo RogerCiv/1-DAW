@@ -1,6 +1,9 @@
 package Ejercicio6y7;
 
 public class Trabajador {
+
+    //Un Trabajador es un empleado que tiene un nombre, sueldo,
+    // dni (no es necesario comprobar que la letra es correcta) y métodos getter
     private String dni;
     private String nombre;
     protected int sueldo;

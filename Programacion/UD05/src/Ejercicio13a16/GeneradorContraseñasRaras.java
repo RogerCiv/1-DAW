@@ -1,7 +1,10 @@
 package Ejercicio13a16;
 
 import java.util.Random;
-
+    //es un tipo de generador de contraseñas únicas que genera una contraseña única, 
+    //y sustituye cada uno de sus caracteres por el que se obtiene
+    //sumando 122 a su código ascii. De esa forma, las letras y números de la contraseña generada
+    // son sustituidos por símbolos que no se corresponden con letras ni números.
 public class GeneradorContraseñasRaras extends GeneradorContraseñasUnicas {
 
     public GeneradorContraseñasRaras(){

@@ -3,7 +3,8 @@ package Ejercicio13a16;
 import java.util.Random;
 
 public class GeneradorContraseñasInvertidas extends GeneradorContraseñasUnicas{
-
+    //es un tipo de generador de contraseñas únicas que genera una contraseña única y después le cambia todas las letras que estén en
+    //mayúsculas por minúsculas, y viceversa.
 
     public GeneradorContraseñasInvertidas(){
       super();

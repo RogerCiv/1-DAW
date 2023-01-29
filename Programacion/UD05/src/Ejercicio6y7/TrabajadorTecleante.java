@@ -1,6 +1,9 @@
 package Ejercicio6y7;
 
 public class TrabajadorTecleante extends Trabajador {
+
+    //Es un tipo de empleado que utiliza un teclado para trabajar,
+    // y además tiene unas determinadas pulsaciones por minuto
     private int pulsacionesMinuto;
     protected Teclado teclado;
     public TrabajadorTecleante(String nombre, int sueldo, int numDNI, char letraDNI, int ppm) {

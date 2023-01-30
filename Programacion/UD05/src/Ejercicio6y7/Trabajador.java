@@ -9,7 +9,8 @@ public class Trabajador {
     protected int sueldo;
 
     public Trabajador(String nombre, int sueldo, int numDNI, char letraDNI){
-        this.dni = String.valueOf(numDNI)+String.valueOf(letraDNI);
+        this.dni = " "+numDNI+letraDNI;
+       // this.dni = String.valueOf(numDNI)+String.valueOf(letraDNI);
         this.nombre = nombre;
         this.sueldo = sueldo;
     }

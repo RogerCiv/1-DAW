@@ -12,6 +12,6 @@ public class Administrativo extends TrabajadorTecleante{
     
     public void escribirInforme(String t){
         LocalDateTime fecha = LocalDateTime.now();
-        teclado.escribirTexto(t+fecha);
+        teclado.escribirTexto(t.toString()+fecha);
     }
 }

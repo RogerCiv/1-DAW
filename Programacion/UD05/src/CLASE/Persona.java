@@ -6,9 +6,12 @@ public class Persona {
     public double altura;
     protected double peso;
 
-    public Persona(String n, int e, double t, double p){
+    public Persona(String n, int e, double t, double p) throws IsmaelException{
         this.nombre = n;
         this.edad = e;
+        if(t<0){
+            throw new IsmaelException("Altura negativa");
+        }
         this.altura = t;
         this.peso = p;
     }

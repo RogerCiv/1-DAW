@@ -14,6 +14,7 @@ public class GeneradorContraseñasUnicas  extends GeneradorContraseñas{
 
     public GeneradorContraseñasUnicas(Random r){
         super(r);
+        this.contraseñasGeneradas = new HashSet<>();
     }
     //Se sobreescribirá el primer método generarContraseña para que las contraseñas se generan como en el ejercicio anterior,
     // pero cada vez que se genera una, se compruebe que no está en el Set<String>,

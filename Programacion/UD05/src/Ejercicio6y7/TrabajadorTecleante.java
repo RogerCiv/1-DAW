@@ -9,6 +9,7 @@ public class TrabajadorTecleante extends Trabajador {
     public TrabajadorTecleante(String nombre, int sueldo, int numDNI, char letraDNI, int ppm) {
         super(nombre, sueldo, numDNI, letraDNI);
         this.pulsacionesMinuto = ppm;
+        this.teclado = null;
         //TODO Auto-generated constructor stub
     }
     public int getPulsacionesMinuto() {

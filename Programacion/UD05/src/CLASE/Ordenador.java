@@ -18,19 +18,19 @@ public class Ordenador {
     }
 
     public boolean isEncendido() {
-        return encendido;
+        return this.encendido;
     }
 
     public int getCapacidadRam() {
-        return capacidadRam;
+        return this.capacidadRam;
     }
 
     public String getSistemaOperativo() {
-        return sistemaOperativo;
+        return this.sistemaOperativo;
     }
 
     public String getMarca() {
-        return marca;
+        return this.marca;
     }
     public void encender(){
         this.encendido = true;
@@ -40,6 +40,9 @@ public class Ordenador {
     }
     
     public void abrirNavegador(){
+        if(!this.encendido){
+            throw new YeraiException();
+        }
         //Runtime r = Runtime.getRuntime();
         //metodo DEPRECADO = metodo antiguo no recomendable
         try {

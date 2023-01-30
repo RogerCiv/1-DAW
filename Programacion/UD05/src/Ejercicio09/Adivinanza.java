@@ -1,6 +1,6 @@
 package Ejercicio09;
 
-import java.time.Instant;
+import java.time.*;
 
 public class Adivinanza {
     private String enunciado;
@@ -14,19 +14,22 @@ public class Adivinanza {
     }
 
     public String getEnunciado() {
+        this.inicio = Instant.now();
         return this.enunciado;
     }
 
     public void comprobar(String respuesta) throws AdivinanzaException{
-       // Instant ahora = Instant.now();
-        //Instant treinta = ahora.plusSeconds(30);
+       
         if(respuesta.equalsIgnoreCase(respuestaCorrecta)){
-            if(Instant.now().isAfter(Instant.now().plusSeconds(31))){
-                throw new TiempoSuperadoException("Han pasado más de 30 segundos sin responder.");
-            }
-        }else{
+            System.out.println("Respuesta correcta!");
+        }else if(Duration.between(inicio, Instant.now()).getSeconds() > 30){
+           
+            throw new TiempoSuperadoException("Han pasado más de 30 segundos sin responder.");
+        }
+        else{
             throw new AdivinanzaIncorrectaException("Respuesta incorrecta");
         }
+    
     }
 
 }

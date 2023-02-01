@@ -21,12 +21,13 @@ public class Adivinanza {
     public void comprobar(String respuesta) throws AdivinanzaException{
        
         if(respuesta.equalsIgnoreCase(respuestaCorrecta)){
-            System.out.println("Respuesta correcta!");
-        }else if(Duration.between(inicio, Instant.now()).getSeconds() > 30){
+            if(Duration.between(inicio, Instant.now()).getSeconds() > 30){
            
-            throw new TiempoSuperadoException("Han pasado más de 30 segundos sin responder.");
-        }
-        else{
+                throw new TiempoSuperadoException("Han pasado más de 30 segundos sin responder.");
+            }else{
+               System.out.println("Respuesta correcta!"); 
+            }
+        }else{
             throw new AdivinanzaIncorrectaException("Respuesta incorrecta");
         }
     

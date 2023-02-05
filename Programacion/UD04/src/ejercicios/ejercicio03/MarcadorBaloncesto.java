@@ -51,7 +51,7 @@ public class MarcadorBaloncesto {
     //IllegalArgumentException si se pasa un char que no sea L,V o unos puntos no validos.
     public void añadirCanasta(char equipo, int puntos) {
 
-        if (puntos >= 1 || puntos <= 3) {
+        if (puntos >= 1 && puntos <= 3) {
             if (equipo == 'L') {
                 puntosLocal += puntos;
             } else if (equipo == 'V') {

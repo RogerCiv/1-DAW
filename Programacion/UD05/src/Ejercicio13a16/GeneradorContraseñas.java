@@ -9,7 +9,7 @@ public class GeneradorContraseñas {
 
     //El primer constructor crea un generador de contraseñas, creando su Random interno.
     public GeneradorContraseñas(){
-        random = new Random();
+        this.random = new Random();
     }
     //El segundo constructor crea un generador de contraseñas con el Random suministrado
     public GeneradorContraseñas(Random r){
@@ -26,14 +26,15 @@ public class GeneradorContraseñas {
 
         StringBuilder respuesta = new StringBuilder();
         
-        for(int i= 0; i<longitud ; i++){
+      /*
+       *   for(int i= 0; i<longitud ; i++){
             int r = new Random().nextInt(3);
             if(r==0){
-                int num1 = new Random().nextInt(48, 57);
+                int num1 = new Random().nextInt(48, 58);
                 
                 respuesta.append((char) num1);
             }else if(r==1){
-                int num2 = new Random().nextInt(65, 90);
+                int num2 = new Random().nextInt(65, 91);
 
                 respuesta.append((char) num2);
             }else if(r==2){
@@ -42,6 +43,17 @@ public class GeneradorContraseñas {
             }
 
         }
+       */
+      int[][] rangos = {
+        {48,57},
+        {64,91},
+        {97,123}
+      };
+      for(int i= 0; i<longitud ; i++){
+         int filaAleatoria = random.nextInt(3);
+         int aleatorio = random.nextInt(rangos[filaAleatoria][0],rangos[filaAleatoria][1]);
+         respuesta.append((char) aleatorio);
+      }
 
         return respuesta.toString();
 
@@ -51,4 +63,13 @@ public class GeneradorContraseñas {
         //El segundo generarContraseña genera una contraseña de 8 caracteres de longitud.
         return generarContraseña(8);
     }
+/*
+    public static void main(String[] args) {
+        GeneradorContraseñas c = new GeneradorContraseñas();
+
+        for(int i = 0; i<4; i++){
+            System.out.println(c.generarContraseña(4*(i+1)));
+        }
+    }
+    */
 }

@@ -15,6 +15,7 @@ public class EmpleadoPrimable extends Empleado {
     }
     
     public boolean esPrimado() {
+        
         return this.primado;
     }
 

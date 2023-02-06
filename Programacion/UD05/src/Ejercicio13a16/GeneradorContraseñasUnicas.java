@@ -22,9 +22,16 @@ public class GeneradorContraseñasUnicas  extends GeneradorContraseñas{
     @Override
     public String generarContraseña(int longitud){
         String password = super.generarContraseña(longitud);
-        if(contraseñasGeneradas.contains(password)){
-            contraseñasGeneradas.add(password);
+        boolean repetir = true;
+        while(repetir){
+            if(contraseñasGeneradas.contains(password)){
+                contraseñasGeneradas.add(password);
+            }else{
+                contraseñasGeneradas.add(password);
+                repetir = false;
+            }
         }
+       
         return password;
     }
     //Se sobreescribirá el segundo método generarContraseña, para que se genere una contraseña de 12 caracteres de longitud.

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Programa {
     public static void main(String[] args) {
 
-        GeneradorContraseñasArchivo g = new GeneradorContraseñasArchivo("D:/pass.txt");
+        GeneradorContraseñasRaras g = new GeneradorContraseñasRaras();
         
         System.out.println(g.generarContraseña(10));
 

@@ -3,8 +3,14 @@ package Ejercicio18a21;
 import java.util.List;
 
 public interface EmpresaPaqueteria {
-    public void registrarPedido();
+    public void registrarPedido(Paquete p);
     public List<Transportista> getTransportista();
-    public void enviarPaquetes();
+    public default void enviarPaquetes(){
+        List<Transportista> t = getTransportista();
+
+        for(Transportista i : t){
+            i.enviar();
+        }
+    }
 
 }

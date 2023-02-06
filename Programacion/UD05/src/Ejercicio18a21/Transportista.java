@@ -24,7 +24,7 @@ public class Transportista {
 
         for(Paquete i : paquetes){
             try {
-                Thread.sleep(tiempoEntrega*1000);
+                Thread.sleep(tiempoEntrega*60*1000);
                 System.out.println("El paquete "+i.getProducto()+" con prioridad "+i.getPrioridad()
                 +" ha llegado a : "+i.getDireccionDestino());
             } catch (InterruptedException e) {
@@ -32,5 +32,6 @@ public class Transportista {
                 e.printStackTrace();
             }
         }
+        paquetes.clear();
     }
 }

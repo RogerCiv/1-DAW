@@ -9,7 +9,6 @@ public class GeneradorContraseñasArchivo extends GeneradorContraseñas {
     //En las propiedades posee un File que indica la ruta del archivo donde se irán guardando las contraseñas generadas.
     private File archivo;
 
-
     public GeneradorContraseñasArchivo(String ruta){
         this.archivo = new File(ruta);
     }
@@ -18,6 +17,7 @@ public class GeneradorContraseñasArchivo extends GeneradorContraseñas {
         super(r);
         this.archivo = new File(ruta);
     }
+
     //Las contraseñas se generan como en el ejercicio 14, pero cada vez que se genera una, deberá añadirse al archivo (se añadirá al final del archivo una línea con la
     //nueva contraseña). Se recomienda usar la clase FileWriter para programar el método.
     @Override

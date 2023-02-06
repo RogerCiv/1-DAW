@@ -41,10 +41,14 @@ public class EquipoFutbol implements Nombrable{
         if(coach >= 1 && e instanceof Entrenador a){
             throw new IllegalArgumentException("Solo puede haber un entrenador");  
         }
+        if(e instanceof Futbolista f){
+            empleados.add(e);
+        }
         if(empleados.size() > 25){
             throw new IllegalArgumentException("El equipo admite hasta 25 jugadores en plantilla");
         }
-        empleados.add(e);
+        
+
     }
 
     public void pagarSueldoEmpleados(){
@@ -54,7 +58,8 @@ public class EquipoFutbol implements Nombrable{
             i.cobrar(i.getSueldo());
             this.presupuesto -= pagos;
             if(i instanceof EmpleadoPrimable a && a.esPrimado()){
-                pagos*=1.1;
+                i.cobrar(i.getSueldo()*1.1);
+                
             }
             if(presupuesto <pagos){
                 int jPendientes = empleados.size();

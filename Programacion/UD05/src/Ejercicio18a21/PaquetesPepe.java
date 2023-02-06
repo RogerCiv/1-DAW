@@ -1,7 +1,6 @@
 package Ejercicio18a21;
 
-import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.List;
 
 public class PaquetesPepe implements EmpresaPaqueteria {
@@ -14,19 +13,9 @@ public class PaquetesPepe implements EmpresaPaqueteria {
 
 
     @Override
-    public void enviarPaquetes() {
+    public void registrarPedido(Paquete p) {
         // TODO Auto-generated method stub
-
-        pepe.enviar();
-        
-    }
-
-
-
-    @Override
-    public void registrarPedido() {
-        // TODO Auto-generated method stub
-        
+        pepe.subirCamion(p);
     }
 
 
@@ -35,7 +24,7 @@ public class PaquetesPepe implements EmpresaPaqueteria {
     public List<Transportista> getTransportista() {
         // TODO Auto-generated method stub
 
-        return null;
+        return List.of(this.pepe);
     }
 
 

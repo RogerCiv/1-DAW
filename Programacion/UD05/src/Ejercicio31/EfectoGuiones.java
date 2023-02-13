@@ -14,7 +14,8 @@ public class EfectoGuiones implements EfectoEspecial {
     @Override
     public String aplicarEfecto(String frase) {
         
-        return new StringBuilder(frase).replace(frase.indexOf(" "), frase.indexOf(" ")+1, "_").toString();
+       // return new StringBuilder(frase).replace(frase.indexOf(" "), frase.indexOf(" ")+1, "_").toString();
+        return frase.replace(" ", "_");
       }
     
 }

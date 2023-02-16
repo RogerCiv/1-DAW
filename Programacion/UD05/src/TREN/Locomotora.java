@@ -36,9 +36,12 @@ public class Locomotora extends Vagon{
         if(v instanceof Locomotora){
             throw new IllegalArgumentException("Solo puede haber una locomotora");
         }
+        int contador = 0;
+        while(v != null){
+
+        }
         super.getVagonAnterior().enganchar(v);
-        super.getVagonSiguiente().enganchar(v);
-       
+        super.getVagonSiguiente().enganchar(v);  
     }
 
     @Override

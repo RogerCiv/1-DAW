@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-template-rows: repeat(7,100px);
+    grid-template-areas: 
+    "cabecera cabecera cabecera cabecera cabecera"
+    "cabecera cabecera cabecera cabecera cabecera"
+    "izquierda centro centro centro derecha"
+    "izquierda centro centro centro derecha"
+    "izquierda centro centro centro derecha"
+    "footer footer footer footer footer"
+    ;
+}
+
+.cabecera{
+    background-color: rgb(100, 12, 151);
+    grid-area: cabecera;
+}
+.izquierda{
+    background-color: rgb(9, 118, 155);
+    grid-area: izquierda;
+}
+.centro{
+    background-color: rgb(80, 8, 80);
+    grid-area: centro;
+}
+.derecha{
+    background-color: rgb(85, 17, 48) ;
+    grid-area: derecha;
+}
+.footer{
+ 
+    background-color: rgb(100, 12, 151);
+    grid-area: footer;
+}

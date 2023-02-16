@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#principal{
+    background-color: rgb(173, 167, 111);
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.uno{
+    background-color: aqua;
+    border: 2px solid;
+    width: 30vw;
+    height: 20vh;
+ 
+}
+
+.dos{
+    background-color: aqua;
+    width: 30vw;
+    height: 20vh;
+    border: 2px solid;
+    align-self: center; 
+
+}
+
+.tres{
+    background-color: aqua;
+    border: 2px solid;
+    width: 30vw;
+    height: 20vh;
+}

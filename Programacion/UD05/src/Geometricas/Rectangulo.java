@@ -50,7 +50,7 @@ public class Rectangulo    implements Centrable,Apoyable {
     @Override
     public int getLongitudBase() {
         // TODO Auto-generated method stub
-        return esquinainferiorDerecha.x - esquinaSuperiorizquierda.x;
+        return this.esquinainferiorDerecha.x - esquinaSuperiorizquierda.x;
     }
 
     @Override

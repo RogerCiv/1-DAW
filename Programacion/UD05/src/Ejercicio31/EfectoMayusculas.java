@@ -9,7 +9,7 @@ public class EfectoMayusculas implements EfectoEspecial {
     @Override
     public String getNombre() {
         // TODO Auto-generated method stub
-        return TipoEfecto.MAYUSCULAS.name();
+        return TipoEfecto.MAYUSCULAS.toString();
     }
 
     @Override

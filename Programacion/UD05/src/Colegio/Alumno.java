@@ -1,5 +1,6 @@
 package Colegio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public record Alumno(String nombre, List<Nota> notas) implements CalificacionListener {
@@ -11,6 +12,9 @@ public record Alumno(String nombre, List<Nota> notas) implements CalificacionLis
         }
         return notaM/notas.size();
 
+    }
+    public Alumno(String nombre){
+        this(nombre, new ArrayList<>());
     }
     @Override
     public void recibirCalificacion(Profesor p, Alumno a, Nota nota) {

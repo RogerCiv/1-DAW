@@ -39,7 +39,7 @@ public class Circulo  implements Centrable,FiguraGeometrica{
     public void dibujar(Graphics g) {
         // TODO Auto-generated method stub
         g.setColor(color);
-        g.fillOval(radio, radio, radio, radio);
+        g.fillOval(centro.x-radio, centro.y-radio, 2*radio, 2*radio);
     }
 
  

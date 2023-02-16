@@ -1,0 +1,29 @@
+
+
+.container{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.container header{
+   text-align: center;
+   
+}
+
+.content_wrapper{
+    flex-direction: column;
+}
+
+ nav{
+    flex-direction: column;
+    align-self: flex-start;
+    flex-grow: 1;
+}
+
+ main{
+    flex-grow: 2;
+}
+article{
+    flex-grow: 3;
+}

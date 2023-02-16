@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+article{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 25%;
+    max-width: 300px;
+    min-width: 250px;
+    height: auto;
+    border: 2px solid green;
+    
+}
+article img{
+    max-width: 100%;
+    height: 30vh;
+}
+
+article h2{
+    padding: 10px;
+    align-self: flex-start;
+}
+article p.noticia{
+    align-self: center;
+    text-align: justify;
+    padding: 10px;
+}
+article footer{
+    margin: 10px;
+    width: 100%;
+    font-size: small;
+    display: flex;
+}
+
+article footer span{
+  margin-right: 33px ;
+  display: flex;
+}
+article footer span.right{
+ justify-content: right;
+  flex: 3;
+}

@@ -8,7 +8,7 @@ public class Cuadrado extends Rectangulo {
     private int longitudLado;
 
     public Cuadrado(Point esquinaSuperiorIzquierda, Color c, int longitudLado) {
-        super(esquinaSuperiorIzquierda,esquinaSuperiorIzquierda,c);
+        super(esquinaSuperiorIzquierda,new Point(esquinaSuperiorIzquierda),c);
         this.longitudLado = longitudLado;
         //TODO Auto-generated constructor stub
     }

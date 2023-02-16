@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-radius: 15px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: repeat(3,100px);
+    grid-gap: 1vw;
+    padding: 10px;
+    background: rgb(192, 186, 186);
+}
+
+
+.blue {
+    grid-area: 1 / 1 / span 2 / 1 span;
+    background: blue;
+}
+.red {
+    grid-area:  1 / 2 span;
+    background: red;
+}
+
+.yellow {
+    grid-area: 2 / 2 / span 2 / 2 span;
+    background: yellow;
+}
+.pink {
+    grid-area: 3 / 1 span;
+    background: pink;
+}
+
+.green {
+     grid-area:  1 / 2 span;
+    background:  green;
+}
+
+.brown {
+    grid-area: 2 / 1 span ;
+    background: brown;
+}
+
+.purple{
+
+    background: purple;
+}
+
+.orange{
+    grid-area: 3 /2 span;
+    background: orange;
+}

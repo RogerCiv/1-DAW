@@ -9,7 +9,7 @@ public class EfectoInverso implements Simetrico, EfectoEspecial {
     @Override
     public String getNombre() {
         // TODO Auto-generated method stub
-        return  TipoEfecto.INVERSO.name();
+        return  TipoEfecto.INVERSO.toString();
     }
 
     @Override

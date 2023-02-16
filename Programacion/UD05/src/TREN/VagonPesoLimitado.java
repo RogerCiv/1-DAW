@@ -6,7 +6,11 @@ public abstract class VagonPesoLimitado extends Vagon{
    
 
     public VagonPesoLimitado(int pm){
-       super();
+       //super();
+       if(pm<=0){
+        throw new IllegalArgumentException("El peso maximo debe ser positivo");
+       }
+       this.pesoMaximo = pm;
     }
 
     public int getPesoMaximo() {

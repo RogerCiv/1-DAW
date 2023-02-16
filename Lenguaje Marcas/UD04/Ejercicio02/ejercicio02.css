@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#principal{
+    background-color: rgb(173, 167, 111);
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.uno{
+    background-color: aqua;
+    border: 2px solid;
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+
+.dos{
+    background-color: aqua;
+    width: 300px;
+    height: 200px;
+    border: 2px solid;
+    margin-top: 4vh;
+    justify-content: center;
+    align-items: center;
+    align-self: baseline;
+}
+
+.tres{
+    background-color: aqua;
+    border: 2px solid;
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}

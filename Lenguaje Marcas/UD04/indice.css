@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: lightsalmon;
+}
+div{
+    padding: 20vh;
+    text-align: center;
+    min-height: 500px;
+    min-height: 100px;
+}
+li{
+    list-style: none;
+    padding: 5vh;
+
+}
+a{
+    text-decoration: none;
+   
+}
+
+a:link{
+    color: #c63637;
+}
+a:hover{
+    color: #f0a2f6;
+}
+
+button{
+    background-color:  #c96262;;
+    border: 0px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+button:hover{
+    background-color: #bb2f2f;
+    color: coral;
+}

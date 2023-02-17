@@ -54,12 +54,17 @@ ROUND(precio-precio*0.20,2) AS "Descuento 20%" FROM conferencia;
 
 -- Ejercicio 14
 
-SELECT tema,  DATE_FORMAT(fecha,"%d/%m/%y") AS fecha, precio, ROUND(precio-precio*0.5,2) AS "Descuento 5%" 
-FROM conferencia ORDER BY precio DESC;
+SELECT tema,  DATE_FORMAT(fecha,"%d/%m/%y") AS fecha, precio, ROUND(precio*0.5,2) AS "Descuento 5%" 
+FROM conferencia ORDER BY "Descuento 5%" DESC;
+
+SELECT tema,  DATE_FORMAT(fecha,"%d/%m/%y") AS fecha, precio, 
+FLOOR(precio-precio*0.5,2) AS "Descuento 5%" 
+FROM conferencia ORDER BY "Descuento 5%" DESC;
 
 -- Ejercicio 15
 
-SELECT UPPER(codigo) AS "Codigo", UPPER(nombre) AS "Nombre", CONCAT_WS(" ",UPPER(apellido1), UPPER(apellido2)) AS "Apellidos", UPPER(especialidad) AS "especialidad"
+SELECT UPPER(codigo) AS "Codigo", UPPER(nombre) AS "Nombre", CONCAT_WS(" ",UPPER(apellido1),
+ UPPER(apellido2)) AS "Apellidos", UPPER(especialidad) AS "especialidad"
 FROm ponente ORDER BY apellidos ;
 
 -- EJercicio 16
@@ -107,3 +112,32 @@ FROM asistente;
 SELECT nombre, CONCAT_WS(" ",apellido1,apellido2) AS "apellidos" , DAYOFWEEK(fechaNac) AS "Dia Semana",
 DAYOFYEAR(fechaNac) AS "Dia del año", WEEKOFYEAR(fechaNac) "Numero de la semana"
 FROM asistente;
+
+-- Ejercicio 21
+
+SELECT nombre,capacidad
+FROM sala
+WHERE capacidad >= 200;
+SELECT COUNT(nombre) AS "numero salas con 200 o más"
+ FROM sala WHERE capacidad >= 200;
+
+-- Ejercicio 22
+SELECT  AVG(gratificacion) AS "Media Gratificacion"
+FROM participar;
+
+-- Ejercicio 23
+SELECT turno, COUNT(DISTINCT sala) FROM conferencia GROUP BY turno;
+
+-- Ejercicio 24
+SELECT turno, COUNT(DISTINCT sala) 
+FROM conferencia 
+WHERE sala !="Apolo" GROUP BY turno;
+
+-- Ejercicio 25
+SELECT turno, COUNT(DISTINCT sala) FROM conferencia WHERE turno ="M";
+
+-- Ejercicio 26
+SELECT sexo, COUNT(sexo) FROM asistente GROUP BY sexo;
+
+-- Ejercicio 27
+

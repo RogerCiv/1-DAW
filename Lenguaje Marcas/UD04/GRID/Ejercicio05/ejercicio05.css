@@ -1,11 +1,115 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
-.container{
+.content_wrapper{
     display: grid;
-    grid-template-columns: repeat(4,auto) ;
-    grid-template-rows: repeat(5,150px);
+    grid-template-columns: 12% 25% 25% 33% ;
+    grid-template-rows: repeat(1,auto);
+    grid-template-areas:
+ 
+    "aside primera primera segunda";
+    grid-gap: 20px;
+    justify-content: center;
+   
+}
+header{
+    grid-area: header;
+    text-align: center;
+    border-bottom: 1px solid;
+}
 
+.aside{
+    grid-area: aside;
+    padding: 1px;
+
+    
+}
+.aside div{
+    padding: 15px;
+   
+}
+.primera{
+    border: 1px solid;
+    text-align: center;
+    border-radius: 5%;
+    grid-area: primera;
+}
+.primera img{
+    border-radius: 20px;
+ width: 90%;
+
+}
+.segunda{
+    padding: 20px;
+    grid-area: segunda;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 20px;
+}
+.segunda img{
+    width: 23vw;
+    height: 23vh;
+    border-radius: 20px;
+
+}
+
+.articles{
+    display: grid;
+    grid-template-columns: 12% 26% 26% 26%;
+    grid-template-rows: repeat(1,auto);
+    grid-template-areas: 
+    "vacio uno dos tres"
+    ;
+    grid-gap: 30px;
+}
+.articles img{
+    width: 90%;
+    height: 20vh;
+    border-radius: 10%;
+}
+.uno{
+   
+    border: 1px solid;
+    border-radius: 8%;
+    grid-area: uno;
+}
+
+.dos{
+     border: 1px solid;
+    border-radius: 8%;
+    grid-area: dos;
+}
+.tres{
+   
+    border: 1px solid;
+    border-radius: 8%;
+    grid-area: tres;
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(1,auto);
+    grid-template-areas: 
+    "fo1 fo2 fo2 fo3"
+    ;
+    border-top: 1px solid;
+    align-items: center;
+    text-align: center;
+}
+.fo1{
+    grid-area: fo1;
+    text-align: left;
+}
+.fo2{
+    text-align: center;
+    grid-area: fo2;
+}
+.fo3{
+    grid-area: fo3;
+}
+.fo3 img{
+    width: 5vw;
 }

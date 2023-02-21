@@ -9,7 +9,7 @@ public record Nota(double valorNumerico) {
             respuesta = Valoracion.MUY_DEFICIENTE;
         }else if(valorNumerico <5){
             respuesta = Valoracion.INSUFICIENTE;
-        }else if(valorNumerico>5){
+        }else if(valorNumerico<6){
             respuesta = Valoracion.SUFICIENTE;
         }else if(valorNumerico <7){
             respuesta = Valoracion.BIEN;

@@ -17,5 +17,4 @@ public record TutorLegal(String nombre, Alumno[] hijos) implements CalificacionL
             }
         }
     }
-    
 }

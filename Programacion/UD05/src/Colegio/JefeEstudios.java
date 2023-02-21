@@ -24,8 +24,13 @@ public class JefeEstudios extends EmpleadoColegio{
         // TODO Auto-generated method stub
         int contador = 0;
         if(nota.getValoracion().esSuspenso()){
-            contador++;
-            notasAsignaturas.put(p.getAsignatura(), contador);
+            if(notasAsignaturas.containsKey(p.getAsignatura())){
+                contador++;
+                notasAsignaturas.put(p.getAsignatura(),notasAsignaturas.get(p.getAsignatura()));
+            }else{
+
+            }
+           
         }
     }
 }

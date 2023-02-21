@@ -14,16 +14,18 @@ public record Alumno(String nombre, List<Nota> notas) implements CalificacionLis
 
     }
     public Alumno(String nombre){
-        this(nombre, new ArrayList<>());
+        this(nombre, new ArrayList<Nota>());
     }
     @Override
     public void recibirCalificacion(Profesor p, Alumno a, Nota nota) {
         // TODO Auto-generated method stub
+        /*
         if(a.equals(this)){
             notas.add(nota);
         }
-        
+        */
+        if(a.nombre().equals(this.nombre())){
+            notas.add(nota);
+        }   
     }
-    
-  
 }

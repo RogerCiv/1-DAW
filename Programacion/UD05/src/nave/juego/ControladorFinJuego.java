@@ -1,7 +1,7 @@
 package nave.juego;
 
 import nave.FrameworkDAW.GameObject;
-import nave.FrameworkDAW.Juego;
+
 
 public class ControladorFinJuego extends GameObject{
 
@@ -16,6 +16,11 @@ public class ControladorFinJuego extends GameObject{
     @Override
     public void ejecutarFrame() {
         // TODO Auto-generated method stub
+        if(escena instanceof JuegoNaves ene){
+            if(ene.getEnemigos().isEmpty()){
+                escena.finalizar();
+            }
+        }
     
     }
 

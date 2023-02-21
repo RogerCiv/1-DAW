@@ -3,6 +3,7 @@ package nave.juego;
 import java.time.Duration;
 import java.time.Instant;
 import bpc.daw.consola.*;
+import nave.FrameworkDAW.Resolucion;
 import nave.FrameworkDAW.SpriteGameObject;
 
 import java.awt.*;
@@ -42,11 +43,14 @@ public abstract class Nave extends SpriteGameObject{
     
         
         if(t.teclaPulsada(teclaIzquierda)){
-         
-           this.setX(this.getX() - this.velocidad);
+            //Toolkit.getDefaultToolkit().getScreenSize().getWidth() --- version antigua y mal.
+           if(this.getX() - this.velocidad > 0 && this.getX() - this.velocidad < juego.getAnchuraPantalla()){
+            this.setX(this.getX()-this.velocidad);
+           }
+           
         }else if(t.teclaPulsada(teclaDerecha)){
             int nuevaD = this.getX() + this.velocidad;
-            if(nuevaD > 0){
+            if(nuevaD > 0 && nuevaD < juego.getAnchuraPantalla()){
                 this.setX(nuevaD);
             }
            

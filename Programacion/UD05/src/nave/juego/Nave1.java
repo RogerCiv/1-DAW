@@ -2,7 +2,7 @@ package nave.juego;
 
 import java.awt.Image;
 
-import nave.FrameworkDAW.Escena;
+import nave.FrameworkDAW.*;
 
 public class Nave1 extends Nave{
 
@@ -23,6 +23,7 @@ public class Nave1 extends Nave{
         Disparo d = new Disparo(CacheImagenes.getInstancia().getImagen("./img/Disparo.png"),
          100, 1000, 0, 0, -10);
          //añadir(d);
+       
        
     }
     

@@ -55,4 +55,16 @@ public abstract class SpriteGameObject extends GameObject{
         int difY = y - getY();
         this.sprite.moverY(difY);
     }
+
+    public Sprite getSprite() {
+        return sprite;
+    }
+
+    public Image getImagen() {
+        return imagen;
+    }
+
+    public Point getPuntoInicial() {
+        return puntoInicial;
+    }
 }

@@ -1,6 +1,6 @@
 package nave.juego;
 
-import java.awt.Image;
+
 
 public class Enemigo1 extends Enemigo{
     private int velocidad;
@@ -14,8 +14,13 @@ public class Enemigo1 extends Enemigo{
     @Override
     public void ejecutarFrame() {
         // TODO Auto-generated method stub
-
-        this.moverX(this.velocidad);
+      
+       // this.moverX(this.velocidad);
+        if(this.getX()>=this.getAnchura()){
+            this.moverX(-this.velocidad);
+        }else{
+            this.moverX(this.velocidad);
+        }
     }
 
     @Override

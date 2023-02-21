@@ -23,7 +23,12 @@ public class Profesor {
     }
 
     public void calificar(Alumno a, double n){
+        // Añade la nota al cuaderno del profesor.
         this.notas.put(a,n);
+        //Enviar las notificaciones a todos los interesados.
+        for(CalificacionListener i : interesados){
+            i.recibirCalificacion(this, a, new Nota(n));
+        }
         
     }
 

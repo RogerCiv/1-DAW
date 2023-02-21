@@ -18,6 +18,7 @@ public class Nave2 extends Nave{
         400, 1000, 1,-3,-3);
         Disparo d2 = new Disparo(CacheImagenes.getInstancia().getImagen("./img/Disparo.png"), 
         400, 1000, 1, 3,-3);
+        
     }
     
 }

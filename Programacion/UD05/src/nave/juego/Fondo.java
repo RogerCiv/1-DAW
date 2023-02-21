@@ -20,13 +20,19 @@ public class Fondo extends GameObject{
         // TODO Auto-generated method stub
         consola.getCapaFondo();
 
-       this.camara = new Rectangle(0,0,0,0);
+       this.camara = new Rectangle(0,0,juego.getAnchuraPantalla(),juego.getAlturaPantalla());
     }
 
     @Override
     public void ejecutarFrame() {
         // TODO Auto-generated method stub
-        
+       Graphics g = consola.getCapaCanvas().getGraphics();
+       
+        g.drawImage(imagen,(int) camara.getX(), (int)camara.getY(),(int)camara.getWidth(),(int)camara.getHeight(),null);
+        this.camara.translate(0,velocidadCamara);
+        if(this.imagen.getHeight(null) < this.camara.getY()){
+            camara.setLocation(0, 0);
+        }
     }
 
     @Override

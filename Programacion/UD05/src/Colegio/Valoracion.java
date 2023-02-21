@@ -5,6 +5,7 @@ public enum Valoracion {
 
 
     public boolean esAprobado(){
+        
         return ordinal()>1;
     }
 

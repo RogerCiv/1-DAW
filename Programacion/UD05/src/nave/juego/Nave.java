@@ -3,7 +3,6 @@ package nave.juego;
 import java.time.Duration;
 import java.time.Instant;
 import bpc.daw.consola.*;
-import nave.FrameworkDAW.Resolucion;
 import nave.FrameworkDAW.SpriteGameObject;
 
 import java.awt.*;
@@ -58,5 +57,25 @@ public abstract class Nave extends SpriteGameObject{
             this.disparar();
         }
         
+    }
+
+    public int getTeclaIzquierda() {
+        return teclaIzquierda;
+    }
+
+    public int getTeclaDerecha() {
+        return teclaDerecha;
+    }
+
+    public int getTeclaDisparo() {
+        return teclaDisparo;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public Instant getUltimoDisparoRealizado() {
+        return ultimoDisparoRealizado;
     }
 }

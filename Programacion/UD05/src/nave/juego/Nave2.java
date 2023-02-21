@@ -2,6 +2,8 @@ package nave.juego;
 
 import java.awt.Image;
 
+import bpc.daw.consola.Teclado;
+
 public class Nave2 extends Nave{
 
     public Nave2(int ti, int de, int tdi, int v, Image imagen, int x, int y) {
@@ -14,10 +16,16 @@ public class Nave2 extends Nave{
     @Override
     public void realizarDisparo() {
         // TODO Auto-generated method stub
-        Disparo d1 = new Disparo(CacheImagenes.getInstancia().getImagen("./img/Disparo.png"), 
-        400, 1000, 1,-3,-3);
-        Disparo d2 = new Disparo(CacheImagenes.getInstancia().getImagen("./img/Disparo.png"), 
-        400, 1000, 1, 3,-3);
+        if(super.consola.getTeclado().teclaPulsada(getTeclaDisparo())){
+            Disparo d1 = new Disparo(CacheImagenes.getInstancia().getImagen("./img/Disparo.png"), 
+            400, 1000, 1,-3,-3);
+            Disparo d2 = new Disparo(CacheImagenes.getInstancia().getImagen("./img/Disparo.png"), 
+            400, 1000, 1, 3,-3);
+           //escena.inicializar();
+           
+        }
+
+     
         
     }
     

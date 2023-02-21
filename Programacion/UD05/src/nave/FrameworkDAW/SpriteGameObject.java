@@ -26,8 +26,10 @@ public abstract class SpriteGameObject extends GameObject{
     @Override
     public void inicializar() {
         // TODO Auto-generated method stub
-        Consola c = new Consola();
-       this.sprite = c.getCapaSprites().crearSprite(this.imagen,null, getX(), getY());
+     //   Consola c = new Consola();
+        this.sprite =  consola.getCapaSprites().crearSprite(this.imagen, new Rectangle(0, 0, getAnchura(), getAltura()),
+       puntoInicial.x, puntoInicial.y);
+     
     }
     public int getX(){
         return this.puntoInicial.x;

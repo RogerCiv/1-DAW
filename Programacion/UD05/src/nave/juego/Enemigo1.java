@@ -16,6 +16,7 @@ public class Enemigo1 extends Enemigo{
         // TODO Auto-generated method stub
       
        // this.moverX(this.velocidad);
+       //this.juego.getAnchuraPantalla();
         if(this.getX()>=this.getAnchura()){
             this.moverX(-this.velocidad);
         }else{

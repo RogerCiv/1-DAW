@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Caveat', cursive;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+body{
+    margin: 5%;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 9% 26% 26% 26% ;
+    grid-template-rows: 150px, 250px, 100px 150px;
+    justify-content: center;
+    grid-gap: 4%;
+}
+
+header{
+    grid-area: 1 / 1 / 2 / 5;
+    border-bottom: 2px solid;
+    align-self: center;
+    text-align: center;
+ 
+}
+nav{
+    grid-area: 2/ 1;
+    padding: 3%;
+    
+}
+ul{
+    list-style-type: none;
+}
+li{
+    padding: 10%;
+}
+main{
+    grid-area: 2 / 2 / 3 /4  ;
+    border-radius: 5%;
+    border: 1px solid;
+    padding: 3%;
+    text-align: center;
+
+}
+main img{
+    width: 38vw;
+    height: 26vh;
+    border-radius: 5%;
+}
+
+.uno{
+    grid-area: 2 / 4 ;
+    border-radius: 5%;
+    border: 1px solid;
+    padding: 3%;
+    text-align: center;
+  
+}
+article img{
+    width: 21vw;
+    height: 20vh;
+    border-radius: 5%;
+   
+}
+.dos{
+    grid-area: 3 / 2;
+    border-radius: 5%;
+    border: 1px solid;
+    padding: 3%;
+    text-align: center;
+    
+}
+h2{
+   margin-top: 8%
+}
+
+.tres{
+    grid-area: 3 / 3;
+    border-radius: 5%;
+    border: 1px solid;
+    padding: 3%;
+    text-align: center;
+}
+.cuatro{
+    grid-area: 3 / 4;
+    border-radius: 5%;
+    border: 1px solid;
+    padding: 3%;
+}
+
+/*
+.fo1{
+    grid-area: 5 / 1;
+}
+.fo2{
+    grid-area: 4 / 2;
+}
+.fo3{
+     grid-area: 4 / 4;
+}
+
+
+.fo3 img{
+    width: 10%;
+}*/

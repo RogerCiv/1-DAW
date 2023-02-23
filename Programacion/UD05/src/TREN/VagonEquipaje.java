@@ -16,7 +16,9 @@ public class VagonEquipaje extends VagonPesoLimitado{
     }
 
     public void añadir(Maleta m){
-        if(super.comprobarPesoMaximoExcedido())
+        if(super.comprobarPesoMaximoExcedido()){
+            
+        }
         this.almacen.add(m);
     }
 

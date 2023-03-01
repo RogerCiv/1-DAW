@@ -14,19 +14,25 @@ body{
     display: grid;
     grid-template-columns: 9% 26% 26% 26% ;
     grid-template-rows: 150px, 250px, 100px 150px;
+    grid-template-areas: 
+    "cab cab cab cab"
+    "nav main main uno"
+    "nav dos tres cuatro"
+    "footer footer footer footer"
+    ;
     justify-content: center;
     grid-gap: 4%;
 }
 
 header{
-    grid-area: 1 / 1 / 2 / 5;
+    grid-area: cab;
     border-bottom: 2px solid;
-    align-self: center;
+    
     text-align: center;
  
 }
 nav{
-    grid-area: 2 / 1;
+    grid-area: nav;
     padding: 3%;
     
 }
@@ -37,7 +43,7 @@ li{
     padding: 10%;
 }
 main{
-    grid-area: 2 / 2 / 3 /4  ;
+    grid-area:main;
     border-radius: 5%;
     border: 1px solid;
     padding: 3%;
@@ -51,7 +57,7 @@ main img{
 }
 
 .uno{
-    grid-area: 2 / 4 ;
+    grid-area: uno;
     border-radius: 5%;
     border: 1px solid;
     padding: 3%;
@@ -65,7 +71,7 @@ article img{
    
 }
 .dos{
-    grid-area: 3 / 2;
+    grid-area: dos;
     border-radius: 5%;
     border: 1px solid;
     padding: 3%;
@@ -77,37 +83,49 @@ h2{
 }
 
 .tres{
-    grid-area: 3 / 3;
+    grid-area: tres;
     border-radius: 5%;
     border: 1px solid;
     padding: 3%;
     text-align: center;
 }
 .cuatro{
-    grid-area: 3 / 4;
+    grid-area: cuatro;
     border-radius: 5%;
     border: 1px solid;
     padding: 3%;
     text-align: center;
 }
 
-footer {
-    grid-area: 4 / 1 / 5 / 4;
+footer{
+    padding: 2%;
     border-top: 1px solid;
-    
-}
-address{
-    grid-area: 4 / 2 / 4 / 5;
-    text-align: left;
-}
-.fo2{
-    text-align: center;
-}
-.fo3{
-    text-align: right;
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /*
+    grid-template-columns: 9% 50% 30%;
+    grid-template-rows: 60px ;
+    grid-template-areas: 
+    "iz cen cen de"
+    ;*/
 }
 footer img{
-    width: 6%;
+    width: 15%;
     text-align: right;
 }
-
+.iz{
+flex: 1;
+}
+.cen{
+   /* grid-area: cen;*/
+   flex: 2;
+    text-align: center;
+}
+.de{
+    flex: 1;
+    grid-area: de;
+    text-align: right;
+}

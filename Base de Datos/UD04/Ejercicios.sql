@@ -140,4 +140,26 @@ SELECT turno, COUNT(DISTINCT sala) FROM conferencia WHERE turno ="M";
 SELECT sexo, COUNT(sexo) FROM asistente GROUP BY sexo;
 
 -- Ejercicio 27
+SELECT sexo, COUNT(sexo), NVL(empresa,"Sin empresa asignada") AS empresa
+FROM asistente 
+WHERE empresa IS NULL
+GROUP BY sexo;
 
+-- Ejercicio 28
+SELECT sexo, COUNT(sexo), NVL(empresa,"Sin empresa asignada") AS empresa
+FROM asistente 
+WHERE sexo = "H"
+GROUP BY empresa;
+
+-- Ejerccio 29
+SELECT  referencia,tema, nombre
+FROM ponente 
+JOIN participar ON (ponente.codigo=participar.codPonente)
+JOIN conferencia ON (participar.refConferencia=conferencia.referencia);
+
+-- Ejercicio 30
+SELECT nombre, CONCAT_WS(" ",apellido1,apellido2) AS "Apellidos"
+FROM asistente
+JOIN asistir ON (asistente.codigo=asistir.codAsistente)
+JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+WHERE referencia="PWB1314";

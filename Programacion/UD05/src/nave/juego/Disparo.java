@@ -32,7 +32,7 @@ public class Disparo extends SpriteGameObject{
             //List<Enemigo> prueba =  enemigo.getEnemigos();
           
             if(getSprite().comprobarColision(getSprite())){
-                enemigo.getEnemigos().remove(enemigo);
+                enemigo.getEnemigos().remove();
                
             }
         }

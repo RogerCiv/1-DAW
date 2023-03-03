@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: 0;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns:auto;
+    grid-template-rows: repeat(4,auto) ;
+    grid-template-areas: 
+    "cab"
+    "princ"
+    "img"
+    "novedades"
+    "novedad1"
+    "novedad2"
+    "novedad3";
+}
+
+header{
+    grid-area: cab;
+    background-color: aqua;
+    display: flex;
+    justify-content: flex-start;
+}
+nav{
+    grid-area: nav;
+    flex:1;
+    align-self: left;
+    text-align: left;
+    background-color: red;
+  
+}
+ul{
+    list-style-type: none;
+}
+
+main{
+    padding: 2%;
+    text-align: justify;
+    grid-area: princ;
+    background-color: grey;
+}
+main h3, p{
+    color: white; 
+    text-align: left;
+}
+main h2 {
+    color: green;
+}
+
+.container-img img{
+    width: 20vw;
+    height: 20vh;
+    grid-area: img;
+}
+.novedades{
+    padding: 2%;
+    grid-area: novedades;
+}
+.novedad1{
+    padding: 2%;
+    grid-area: novedad1;
+}
+.novedad2{
+    grid-area: novedad2;
+}
+.novedad3{
+    grid-area: novedad3;
+}

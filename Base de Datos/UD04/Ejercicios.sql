@@ -151,15 +151,111 @@ FROM asistente
 WHERE sexo = "H"
 GROUP BY empresa;
 
--- Ejerccio 29
-SELECT  referencia,tema, nombre
+-- Ejerccio 29 -- conferencias
+SELECT  referencia,tema, nombre, CONCAT_WS(" ",apellido1,apellido2) AS "Apellidos"
 FROM ponente 
 JOIN participar ON (ponente.codigo=participar.codPonente)
 JOIN conferencia ON (participar.refConferencia=conferencia.referencia);
+
+-- conferencias 2
+SELECT  conferencia.idConferencia,tema, nombre, CONCAT_WS(" ",apellido1,apellido2) AS "Apellidos"
+FROM ponente 
+JOIN participa USING (idPonente)
+JOIN conferencia USING (idConferencia);
 
 -- Ejercicio 30
 SELECT nombre, CONCAT_WS(" ",apellido1,apellido2) AS "Apellidos"
 FROM asistente
 JOIN asistir ON (asistente.codigo=asistir.codAsistente)
-JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
 WHERE referencia="PWB1314";
+
+-- conferencias 2
+SELECT nombre, apellido1, apellido2
+FROM asistente
+JOIN asiste USING (idAsistente)
+WHERE idConferencia="PWB1314";
+
+-- Ejercicio 31
+
+SELECT tema,COUNT(*) AS "Total asistentes" 
+FROM asistente
+JOIN asistir ON (asistente.codigo=asistir.codAsistente)
+JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+GROUP BY tema;
+-- mas corto
+SELECT tema,COUNT(*) AS "Total asistentes" 
+FROM conferencia
+JOIN asistir ON (asistir.refConferencia=conferencia.referencia)
+GROUP BY tema;
+
+-- conferencias 2
+SELECT tema,COUNT(*) AS "Total asistentes"
+FROM conferencia 
+JOIN asiste USING(idConferencia)
+GROUP BY tema;
+
+-- Ejercicio 32
+SELECT nombre, CONCAT_WS(" ",apellido1,apellido2) AS "Apellidos",sala, tema, numOrden
+FROM `ponente`
+JOIN participar ON (ponente.codigo=participar.codPonente)
+JOIN conferencia ON (participar.refConferencia=conferencia.referencia)
+ORDER BY tema,numOrden;
+
+-- conferencias 2
+SELECT nombre, CONCAT_WS(" ",apellido1,apellido2) AS "Apellidos",nombreSala, tema, numOrden
+FROM `ponente`
+JOIN participa USING (idPonente)
+JOIN conferencia USING (idConferencia)
+ORDER BY tema,numOrden;
+-- Ejercicio 33
+SELECT tema,sala, COUNT(*) AS TotalAsistentes
+FROM `asistir`
+JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+GROUP BY tema, sala
+ORDER BY TotalAsistentes DESC;
+
+--conferencias 2
+SELECT tema, sala, COUNT(*) AS TotalAsistentes
+FROM asiste
+JOIN conferencia USING (idConferencia)
+GROUP BY tema, sala
+ORDER BY TotalAsistentes DESC;
+
+-- Ejercicio 34
+SELECT DISTINCT nombre,apellido1,apellido2, conferencia.sala
+FROM ponente
+JOIN participar ON (ponente.codigo=participar.codPonente)
+JOIN conferencia ON (participar.refConferencia=conferencia.referencia)
+WHERE sala ="Afrodita";
+
+-- conferencias 2
+SELECT DISTINCT nombre,apellido1,apellido2, conferencia.sala
+FROM ponente
+JOIN participar USING (idPonente)
+JOIN conferencia USING (idConferencia)
+WHERE sala ="Afrodita";
+
+
+
+-- Ejercicio EXTRA CLASE
+-- Quiero conocer el nombre y apellidos de los asistentes que hayan asistido 
+--a alguna conferencia que haya dado Kevin Schultz en la sala afrodita
+-- ordenar los resultados por apellido y nombre
+
+SELECT asistente.nombre, asistente.apellido1,asistente.apellido2, sala
+FROM `asistente`
+JOIN asistir ON (asistente.codigo=asistir.codAsistente)
+JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+JOIN participar ON (conferencia.referencia=participar.refConferencia)
+JOIN ponente ON (participar.codPonente=ponente.codigo)
+WHERE ponente.nombre = "Kevin" AND sala="Apolo";
+
+-- conferencias 2
+
+SELECT asistente.nombre, asistente.apellido1,asistente.apellido2, nombreSala
+FROM `asistente`
+JOIN asiste USING (idAsistente)
+JOIN conferencia USING (idConferencia)
+JOIN participa USING (idConferencia)
+JOIN ponente USING (idPonente)
+WHERE ponente.nombre = "Kevin" AND nombreSala="Apolo";

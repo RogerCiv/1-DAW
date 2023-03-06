@@ -259,3 +259,15 @@ JOIN conferencia USING (idConferencia)
 JOIN participa USING (idConferencia)
 JOIN ponente USING (idPonente)
 WHERE ponente.nombre = "Kevin" AND nombreSala="Apolo";
+
+
+-- Ejercicio 35
+
+SELECT * 
+FROM ponente
+WHERE apellido1 IN (SELECT apellido1 
+                    FROM asistente
+                    WHERE fechaNac = (SELECT MAX(fechaNac)
+                                        FROM asistente));
+
+-- Ejercicio 36

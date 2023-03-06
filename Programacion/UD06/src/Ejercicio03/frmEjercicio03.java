@@ -69,10 +69,8 @@ public class frmEjercicio03 extends javax.swing.JFrame {
 
     private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
         // TODO add your handling code here:
-          boolean visible = true;
-           visible = !visible;
-          lblEtiqueta.setVisible(!visible);
-          if(visible){
+       
+          if(lblEtiqueta.isVisible()){
               lblEtiqueta.setVisible(true);
               btnAccion.setText("Ocultar");
                 

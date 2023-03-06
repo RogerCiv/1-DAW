@@ -126,9 +126,7 @@ public class frmEjercicio06 extends javax.swing.JFrame {
             txtTexto.setText(totalArchivo.toString());
         }catch (FileNotFoundException error){
             JOptionPane.showMessageDialog(rootPane, error.getMessage(), "Error abrir archivo", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        
+        }      
     }//GEN-LAST:event_btnAbrirActionPerformed
 
     /**

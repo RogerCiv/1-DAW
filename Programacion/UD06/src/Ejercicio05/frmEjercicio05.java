@@ -151,13 +151,12 @@ public class frmEjercicio05 extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             int numJugador = Integer.parseInt(txtJugador.getText());
+            int numOrdenador = numeroAleatorio();
+             txtOrdenador.setText(Integer.toString(numOrdenador));
              if(txtJugador.getText().isEmpty() || numJugador < 1 || numJugador > 10){
                 txtResultado.setText("Numero incorrecto");
                  restarPuntos(5);
-              }
-             int numOrdenador = numeroAleatorio();
-             txtOrdenador.setText(Integer.toString(numOrdenador));
-             if(numJugador == numOrdenador){
+              }else if(numJugador == numOrdenador){
                  txtResultado.setText("Gana el jugador");
                  sumaPuntos(10);
              }else{

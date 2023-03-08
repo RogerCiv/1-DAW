@@ -271,3 +271,85 @@ WHERE apellido1 IN (SELECT apellido1
                                         FROM asistente));
 
 -- Ejercicio 36
+SELECT ponente.*
+FROM ponente JOIN participar ON (ponente.codigo=participar.codPonente)
+JOIN conferencia ON (participar.refConferencia=conferencia.referencia)
+WHERE sala IN (SELECT sala
+    FROM conferencia WHERE sala = "Afrodita");
+
+SELECT DISTINCT ponente.*
+FROM ponente JOIN participar ON (ponente.codigo=participar.codPonente)
+JOIN conferencia ON (participar.refConferencia=conferencia.referencia)
+WHERE sala = "Afrodita";
+
+-- LA MÁs Correcta
+SELECT *
+FROm ponente
+WHERE codigo IN  (SELECT  codPonente
+            FROM participar
+            WHERE refConferencia IN (SELECT referencia
+                                FROM conferencia
+                    WHERE nombre="Afrodita"));
+
+-- Ejercicio 37
+
+SELECT nombre, apellido1, apellido2 , sexo, fechaNac, empresa
+FROM asistente JOIN asistir ON (asistente.codigo=asistir.codAsistente)
+    JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+WHERE empresa = "BigSoft" AND tema = "Programacion Web"
+
+-- La correcta con subconsultas
+
+SELECT *
+FROM asistente
+WHERE codigo IN (SELECT  codAsistente
+                 FROM asistir JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+                WHERE tema = "Programacion web")
+            AND  empresa = "BigSoft";
+
+-- Lo mismo pero subconsultas más JOIN
+SELECT *
+FROM asistente
+WHERE codigo IN (SELECT  codAsistente
+                 FROM asistir 
+                 WHERE refConferencia IN (SELECT referencia
+                 FROM conferencia
+                WHERE tema = "Programacion web"))
+            AND  empresa = "BigSoft";
+
+-- Ejercicio 38
+
+SELECT *
+FROM asistente JOIN asistir ON (asistente.codigo=asistir.codAsistente)
+    JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+    WHERE sexo = 'H' AND fechaNac < ("1985/01/01") AND tema = "Programacion Web";
+
+-- La buena con subconsultas
+SELECT *
+FROM asistente 
+WHERE sexo = 'H' AND fechaNac < ("1985/01/01") 
+AND asistente.codigo IN (SELECT codAsistente
+            FROM asistir 
+            WHERE refConferencia IN (SELECT referencia
+            FROM conferencia
+            WHERE tema = "Programacion Web"));
+
+
+-- Ejercicio 39
+
+SELECT  nombre, apellido1, apellido2 SUM(gratificacion) AS total
+FROM ponente JOIN participar ON (ponente.codigo = participar.codPonente)
+GROUP BY nombre,apellido1,apellido2
+
+
+-- Ejercicio 40
+
+SELECT asistente.*, fecha, tema
+FROM asistente
+JOIN asistir ON (asistente.codigo=asistir.codAsistente)
+JOIN conferencia ON (asistir.refConferencia=conferencia.referencia)
+WHERE fecha = "2013/10/02"
+ORDER BY tema ,nombre,apellido1;
+
+-- Con subconsultas
+-- No se puede ordenar por tema

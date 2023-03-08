@@ -1,0 +1,3 @@
+50;Spiderman
+30;Vengadores
+43;Joker

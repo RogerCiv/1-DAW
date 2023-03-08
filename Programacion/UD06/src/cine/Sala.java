@@ -1,6 +1,7 @@
 
 package cine;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -34,7 +35,7 @@ public class Sala {
     public String getPlazasLibres(){
         StringBuilder respuesta = new StringBuilder();
        for(Integer i : plazasLibres){
-           respuesta.append(i+" , ");
+           respuesta.append(i).append(" , ");
        } 
        
        return respuesta.toString();
@@ -46,6 +47,7 @@ public class Sala {
             throw new IllegalArgumentException("No hay plazas libres");
         }
          int plazaLibre = new Random().nextInt(plazasLibres.size());
+         plazasLibres.remove(Integer.valueOf(plazaLibre));
         
         return plazaLibre;
             
@@ -53,13 +55,17 @@ public class Sala {
     
     public boolean reservar(int n){
         boolean respuesta = false;
-        if(plazasLibres.contains(n)){
+      /*  if(plazasLibres.contains(n)){
             for(Integer i : plazasLibres){
                 if(i.equals(n)){
                     plazasLibres.remove(n);
                     respuesta = true;
                 }
             }
+        }
+*/      if(plazasLibres.contains(n)){
+            plazasLibres.remove(n);
+            respuesta = true;
         }
         return respuesta;
     }

@@ -11,20 +11,21 @@ public class Cartelera {
    public static List<Sala> cargarCartelera(String ruta) throws IOException{
        
        List<Sala> listaSalas = new ArrayList<>();       
-       Scanner scan = new Scanner(new File(ruta));
-       int i = 0;
+      Scanner scan = new Scanner(new File(ruta));
+       int numSala = 0;
        while(scan.hasNextLine()){
-           i++;
+           numSala++;
            String linea = scan.nextLine();
            String[] peli = linea.split(";");
-           int capa = Integer.parseInt(peli[0]);
-           String pelicula = peli[1];
+           int capacidad = Integer.parseInt(peli[0]);
+           String titulo = peli[1];
+           String rutaFoto = titulo + ".jpg";
            
-           Sala a = new Sala(i, capa, new Pelicula(pelicula));
+           Sala a = new Sala(numSala, capacidad, new Pelicula(titulo,rutaFoto));
+           listaSalas.add(a);
        }
-       
-       
-       
+       scan.close();
+           
        return listaSalas;
    }
 }

@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public record Pelicula(String titulo, String rutaFoto) {
     
    public Pelicula(String titulo){
-       this(titulo,titulo+" .jpg");
+       this(titulo,titulo+".jpg");
    }
    public Image getFoto(){
        BufferedImage img = null;

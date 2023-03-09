@@ -20,13 +20,15 @@ public class frmCine extends javax.swing.JFrame {
     public frmCine() {
         initComponents();
         setLocationRelativeTo(null);
+        cargarCartelera();
         consultarSalaSeccionada();
+       
        
     }
     private void cargarCartelera(){
       
          try{
-            for(Sala i : Cartelera.cargarCartelera("salas.txt")){
+            for(Sala i : Cartelera.cargarCartelera("./salas.txt")){
                 cmbSalas.addItem(i);
             }
          }catch (IOException error){
@@ -43,7 +45,7 @@ public class frmCine extends javax.swing.JFrame {
     private void consultarSalaSeccionada(){
         Sala sala = getSalaSeleccionada();
         txtCapacidad.setText(String.valueOf(sala.getCapacidad()));
-        txtPlazasLibres.setText(sala.getPlazasLibres());
+        txtPlazasLibres.setText(""+sala.getNumeroPlazasLibres());
         txtNumeroPlazasLibres.setText(""+sala.getNumeroPlazasLibres());
         ImageIcon icon = new ImageIcon(sala.getPelicula().getFoto());
         lblCaratula.setIcon(icon);

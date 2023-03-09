@@ -35,7 +35,7 @@ public class Sala {
     public String getPlazasLibres(){
         StringBuilder respuesta = new StringBuilder();
        for(Integer i : plazasLibres){
-           respuesta.append(i).append(" , ");
+           respuesta.append(i).append(",");
        } 
        
        return respuesta.toString();

@@ -18,6 +18,10 @@ public class Sala {
         this.capacidad = c;
         this.pelicula = p;
         this.plazasLibres = new ArrayList<>();
+        
+        for(int i = 1; i<capacidad + 1; i++){
+            plazasLibres.add(i);
+        }
     }
 
   
@@ -33,13 +37,14 @@ public class Sala {
     }
     
     public String getPlazasLibres(){
-        StringBuilder respuesta = new StringBuilder();
+       StringBuilder respuesta = new StringBuilder();
        for(Integer i : plazasLibres){
            respuesta.append(i).append(",");
        } 
        
        return respuesta.toString();
-       
+      
+   
     }
     public int buscarPlazaLibre(){
        
@@ -47,7 +52,7 @@ public class Sala {
             throw new IllegalArgumentException("No hay plazas libres");
         }
          int plazaLibre = new Random().nextInt(plazasLibres.size());
-         plazasLibres.remove(Integer.valueOf(plazaLibre));
+         //plazasLibres.remove(Integer.valueOf(plazaLibre));
         
         return plazaLibre;
             
@@ -71,6 +76,6 @@ public class Sala {
     }
     @Override
     public String toString(){
-        return "Sala "+numero+" - "+pelicula;
+        return "Sala "+numero+" - "+pelicula.titulo();
     }
 }

@@ -1,17 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package cine;
 
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author roger
- */
+
 public class frmCine extends javax.swing.JFrame {
 
     /**
@@ -20,8 +14,8 @@ public class frmCine extends javax.swing.JFrame {
     public frmCine() {
         initComponents();
         setLocationRelativeTo(null);
-        cargarCartelera();
-        consultarSalaSeccionada();
+      
+        
        
        
     }
@@ -45,10 +39,34 @@ public class frmCine extends javax.swing.JFrame {
     private void consultarSalaSeccionada(){
         Sala sala = getSalaSeleccionada();
         txtCapacidad.setText(String.valueOf(sala.getCapacidad()));
-        txtPlazasLibres.setText(""+sala.getNumeroPlazasLibres());
+        txtPlazasLibres.setText(""+sala.getPlazasLibres());
+        
         txtNumeroPlazasLibres.setText(""+sala.getNumeroPlazasLibres());
-        ImageIcon icon = new ImageIcon(sala.getPelicula().getFoto());
+        ImageIcon icon = new ImageIcon(sala.getPelicula().titulo()+".jpg");
         lblCaratula.setIcon(icon);
+    }
+    
+    private void buscarAsientoLibre(){
+        Sala sa = getSalaSeleccionada();
+        if(sa.buscarPlazaLibre() == 0){
+            JOptionPane.showMessageDialog(this, "No hay plazas libras para la sala seleccionada"
+            ,"Sin asiento",JOptionPane.ERROR_MESSAGE);
+        }
+        txtAsiento.setText(""+sa.buscarPlazaLibre());
+    }
+    
+    private void reservarAsiento(){
+        Sala sala = (Sala) cmbSalas.getSelectedItem();
+        int reserva = Integer.parseInt(txtAsiento.getText());
+        if(!sala.reservar(reserva)){
+            JOptionPane.showMessageDialog(this
+                    , "La plaza "+reserva+" ya está ocupada para la sala seleccionada"
+            ,"Ocupado",JOptionPane.ERROR_MESSAGE);
+        }
+         JOptionPane.showMessageDialog(this
+                    , "Has reservado la  plaza: "+reserva
+            ,"Reserva",NORMAL);
+         cmbSalas.removeItem(reserva);
     }
 
     /**
@@ -79,6 +97,11 @@ public class frmCine extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cine/img/bannerCine.jpg"))); // NOI18N
         jLabel2.setOpaque(true);
@@ -110,8 +133,18 @@ public class frmCine extends javax.swing.JFrame {
         jLabel7.setText("Asiento:");
 
         btnBuscarAsientoLibre.setText("Buscar uno libre");
+        btnBuscarAsientoLibre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarAsientoLibreActionPerformed(evt);
+            }
+        });
 
         btnReservarAsiento.setText("Reservar");
+        btnReservarAsiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservarAsientoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,7 +233,23 @@ public class frmCine extends javax.swing.JFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
+        consultarSalaSeccionada();
     }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        cargarCartelera();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btnBuscarAsientoLibreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAsientoLibreActionPerformed
+        // TODO add your handling code here:
+        buscarAsientoLibre();
+    }//GEN-LAST:event_btnBuscarAsientoLibreActionPerformed
+
+    private void btnReservarAsientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarAsientoActionPerformed
+        // TODO add your handling code here:
+        reservarAsiento();
+    }//GEN-LAST:event_btnReservarAsientoActionPerformed
 
     /**
      * @param args the command line arguments

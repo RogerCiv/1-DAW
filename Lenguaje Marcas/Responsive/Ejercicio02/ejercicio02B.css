@@ -77,7 +77,7 @@ article h4{
     align-items: center;
     grid-area: img;
 }
-.container-img img{
+img{
     width: 25vw;
     height: 20vh;
 }
@@ -95,6 +95,10 @@ article h4{
 }
 .novedad3{
     grid-area: novedad3;
+}
+.img9{
+    width: 0px;
+    height: 0px;
 }
 /*
 .img1{
@@ -135,6 +139,7 @@ article h4{
         "novedades novedad1 novedad2 novedad3"
         ;
     }
+ 
 }
 
 @media (min-width: 800px){
@@ -149,5 +154,9 @@ article h4{
      
 
         ;
+    }
+    .img9{
+        width: 25vw;
+        height: 20vh;
     }
 }

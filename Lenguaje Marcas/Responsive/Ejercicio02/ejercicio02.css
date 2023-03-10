@@ -7,7 +7,7 @@
 .grid-container{
     display: grid;
     grid-template-columns:auto;
-    grid-template-rows: repeat(4,auto) ;
+    grid-template-rows: repeat(7,auto) ;
     grid-template-areas: 
     "cab"
     "princ"
@@ -22,18 +22,22 @@ header{
     grid-area: cab;
     background-color: aqua;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 nav{
     grid-area: nav;
-    flex:1;
-    align-self: left;
-    text-align: left;
+    
+  
     background-color: red;
   
 }
-ul{
+nav ul{
+    display: flex;
     list-style-type: none;
+    flex-direction: row;
+}
+nav li{
+    margin-left: 20px;
 }
 
 main{
@@ -49,11 +53,19 @@ main h3, p{
 main h2 {
     color: green;
 }
-
-.container-img img{
-    width: 20vw;
-    height: 20vh;
+.container-img{
     grid-area: img;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: 
+    "imgs imgs imgs imgs"
+    "imgs imgs imgs imgs";
+}
+img{
+    width: 100%;
+    height: 20vh;
+    grid-area: imgs;
 }
 .novedades{
     padding: 2%;
@@ -64,8 +76,36 @@ main h2 {
     grid-area: novedad1;
 }
 .novedad2{
+    padding: 2%;
     grid-area: novedad2;
 }
 .novedad3{
+    padding: 2%;
     grid-area: novedad3;
+}
+.img9{
+ display: none;
+}
+
+@media (min-width: 450px) {
+    
+    .grid-container{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas: 
+        "cab cab cab cab"
+        "princ princ img img"
+        "novedades novedad1 novedad2 novedad3"
+        ;
+    }
+    .container-img{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: 
+    "imgs imgs imgs imgs"
+    "imgs imgs imgs imgs";
+    }
+ 
 }

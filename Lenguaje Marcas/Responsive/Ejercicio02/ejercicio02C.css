@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    grid-area: cab;
+    display: flex;
+    background-color: green;
+    justify-content: space-between;
+}
+nav{
+    background-color: red;
+    
+    align-self: right;
+    flex-direction: row;
+}
+nav ul  li{
+    list-style-type: none;
+    flex-direction: row;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas:
+    "cab"
+    "main"
+    "img"
+    "section" ;
+}
+
+main {
+    grid-area: main;
+    background-color: gray;
+}
+
+.img-container {
+    grid-area: img;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.img9{
+    display: none;
+}
+section {
+    grid-area: section;
+}
+section img {
+    width: 25vw;
+
+    
+}
+.nov {
+    padding: 2%;
+}
+section article {
+    padding: 2%;
+}
+section article h3,p {
+    padding-top: 2%;
+    
+}
+h3 {
+    color: green;
+}
+h5{
+    font-weight: bold;
+}
+
+@media (min-width: 450px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas:
+        "cab cab cab cab"
+        "main main img img"
+        "section section section section" ;
+    }
+}

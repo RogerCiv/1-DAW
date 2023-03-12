@@ -58,15 +58,19 @@ public class frmCine extends javax.swing.JFrame {
     private void reservarAsiento(){
         Sala sala = (Sala) cmbSalas.getSelectedItem();
         int reserva = Integer.parseInt(txtAsiento.getText());
-        if(!sala.reservar(reserva)){
-            JOptionPane.showMessageDialog(this
+        if(sala.reservar(reserva)){
+              JOptionPane.showMessageDialog(this
+                    , "Has reservado la  plaza: "+reserva
+            ,"Reserva",JOptionPane.INFORMATION_MESSAGE);
+         cmbSalas.removeItem(reserva);
+            
+          
+        }else{
+             JOptionPane.showMessageDialog(this
                     , "La plaza "+reserva+" ya está ocupada para la sala seleccionada"
             ,"Ocupado",JOptionPane.ERROR_MESSAGE);
         }
-         JOptionPane.showMessageDialog(this
-                    , "Has reservado la  plaza: "+reserva
-            ,"Reserva",NORMAL);
-         cmbSalas.removeItem(reserva);
+        
     }
 
     /**

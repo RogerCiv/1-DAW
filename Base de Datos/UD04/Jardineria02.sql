@@ -160,3 +160,23 @@ AND precio_venta >= ALL ( SELECT precio_venta
                          FROM producto 
                          WHERE gama = "Frutales"
                         );
+
+                    
+-- Ejercicio 11
+
+/*
+Obtener el nombre de los productos con mayor stock que compra un cliente
+cuyo representante de ventas trabaje en la oficina de la ciudad de Madrid
+*/
+
+SELECT producto.nombre, empleado.codigo_oficina
+FROM producto
+JOIN detalle_pedido USING (codigo_producto)
+JOIN pedido USING (codigo_pedido)
+JOIN cliente USING (id_cliente)
+JOIN empleado ON (cliente.id_empleado_rep_ventas=empleado.id_empleado)
+WHERE id_empleado IN (SELECT id_empleado
+                      FROM empleado
+                      WHERE codigo_oficina = "MAD-ES")
+   GROUP BY producto.nombre
+   ORDER BY SUM(cantidad) DESC;

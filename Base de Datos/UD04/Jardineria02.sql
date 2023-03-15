@@ -160,6 +160,8 @@ AND precio_venta >= ALL ( SELECT precio_venta
                          FROM producto 
                          WHERE gama = "Frutales"
                         );
+<<<<<<< HEAD
+=======
 
                     
 -- Ejercicio 11
@@ -180,3 +182,4 @@ WHERE id_empleado IN (SELECT id_empleado
                       WHERE codigo_oficina = "MAD-ES")
    GROUP BY producto.nombre
    ORDER BY SUM(cantidad) DESC;
+>>>>>>> 426e814996327cfb844a134566b976068ced5aad

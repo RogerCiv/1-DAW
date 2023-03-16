@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: 0;
+    
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: 50px 759px 100px;
+    background-color: rgb(186, 186, 229);
+}
+
+nav{
+    grid-column: 1 / 4;
+    grid-row: 1;
+    background-color: gray;
+    justify-content: space-around;
+    padding: 1.5%;
+
+}
+ul{
+    list-style-type: none;
+}
+li{
+    display: inline-block;    
+    padding-left: 5%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.golfista{
+    width: 100%;
+}
+.aside{   
+    grid-column: 1;
+    grid-row: 2 ;
+}
+.divaside{
+    background-color: green;
+    margin-top: -2%;
+}
+.p_golfista{
+    color: white;
+    padding: 2%;
+}
+.ad{
+padding: 5%;
+}
+.aside2{
+    grid-column: 3;
+    grid-row: 2 / 4;
+    padding-top: 10%;
+}
+.paside2{
+    width: 80%;
+    border: 1px solid;
+}
+article{
+    padding: 3%;
+    padding-left: 5%;
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+}
+.float1{
+    float: left;
+    margin: 2%;
+}
+.float2{
+    float: left;
+    margin: 2%;
+}
+.float3{
+    float: left;
+    margin: 2%;
+}
+article h2,h4{
+    margin-bottom: 5%;
+}
+footer{
+    grid-column: 1 / 4;
+    grid-row: 4;
+    background-color: gray;
+    display: flex;
+    justify-content: space-around;
+}
+.uno{
+    padding: 1%;
+}
+.dos{
+    padding: 1%;
+    margin-left: 3%;
+}
+.tres{
+    padding: 1%;
+    margin-left: 3%;
+}
+.cuatro{
+    padding: 1%;
+    margin-left: 3%;
+    padding-right: 2%;
+}

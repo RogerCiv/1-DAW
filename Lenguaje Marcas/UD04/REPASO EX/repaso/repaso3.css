@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 10% 68% 25%;
+    background-color:rgb(176, 180, 176);
+}
+
+nav{
+    grid-column: 1 / 4;
+    grid-row: 1;
+    background-color: rgb(68, 66, 66);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5%;
+}
+a{
+    color: white;
+    text-decoration: none;
+    margin-right: 8%;
+    margin-left: 1%;
+}
+
+.aside1{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding: 2%;
+    display: block;
+}
+.divaside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+.repe{
+    display: flex;
+    margin: 30px;
+    justify-content: space-around;
+}
+
+.golfista {
+    width: 100%;
+}
+.divaside{
+    background-color: green;
+}
+
+.aside2{
+    grid-column: 3;
+    grid-row: 2;
+    padding: 5%;
+    margin-left: 3%;
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+.float1{
+  float: left;
+  padding: 2%;
+}
+.float2{
+  float: left;
+  padding: 1%;
+}
+.float3{
+  float: left;
+  padding: 2%;
+}
+
+article{
+    grid-column: 2;
+    grid-row: 2;
+    padding: 2%;
+    overflow: hidden;
+    flex-direction: column;
+}
+article h2{
+    padding: 2%;
+}
+article h3{
+    padding: 2%;
+}
+h4 {
+  padding: 5%;
+
+}
+ul li{
+  list-style-type:square;
+}
+
+footer{
+    grid-column: 1 / 4;
+    grid-row: 3;
+    background-color: rgb(68, 66, 66);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer > div{
+
+}

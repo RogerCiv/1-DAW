@@ -105,27 +105,21 @@ footer{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    /*
-    grid-template-columns: 9% 50% 30%;
-    grid-template-rows: 60px ;
-    grid-template-areas: 
-    "iz cen cen de"
-    ;*/
+  
 }
 footer img{
     width: 15%;
     text-align: right;
 }
 .iz{
-flex: 1;
+    flex: 1;
 }
 .cen{
-   /* grid-area: cen;*/
+
    flex: 2;
     text-align: center;
 }
 .de{
     flex: 1;
-    grid-area: de;
     text-align: right;
 }

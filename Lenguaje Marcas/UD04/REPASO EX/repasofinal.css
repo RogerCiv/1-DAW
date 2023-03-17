@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+body{
+    margin: 0;
+}
+.grid-container{
+    width: 100vw;
+    
+    display: grid;
+    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "aside1 main main aside2"
+    "footer footer footer footer"
+    ;
+}
+
+nav{
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1.5%;
+    background-color: gray;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+aside{
+  grid-area: aside1;
+  background-color: green;
+  padding: 1%;
+  overflow: hidden;
+}
+aside img{
+    width: 100%;
+    max-width: 100%;
+}
+aside > p {
+    padding: 5%;
+}
+aside > h4 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.ad{
+    width: 48%;
+}
+
+.aside2{
+   grid-area: aside2;
+   padding: 5%;
+}
+ul{
+    list-style-type: none;
+}
+main{
+   grid-area: main;
+   padding: 2%;
+}
+article img{
+    float: left;
+    padding: 2%;
+}
+h2, h3{
+    padding: 2%;
+}
+article p{
+    text-align: justify;
+}
+footer{
+    grid-area: footer;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+footer > div{
+    padding: 1%;
+    color: white;
+}
+footer h4{
+    margin-bottom: 10%;
+}

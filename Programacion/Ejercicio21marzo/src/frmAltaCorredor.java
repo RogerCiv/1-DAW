@@ -1,6 +1,8 @@
 
+import java.time.LocalDate;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -292,12 +294,48 @@ public class frmAltaCorredor extends javax.swing.JFrame {
         habilitarPanelProfesional();
     }//GEN-LAST:event_optSinEspecificarActionPerformed
 
+    private void crearCorredorAmateur(){
+              
+            em = Persistence.createEntityManagerFactory("CORREDOR").createEntityManager();
+            LocalDate fechaN = LocalDate.parse(txtFechaNac.getText());
+            CorredorAmateur cA = new CorredorAmateur(txtNombreCorredor.getText(),fechaN,
+                    Integer.parseInt(txtExperiencia.getText()), Integer.parseInt(txtExperiencia.getText()));
+            em.getTransaction().begin();
+            em.persist(cA);
+            em.getTransaction().commit();
+        
+    }
+    
+    private void crearCorredorProfesional(){
+            em = Persistence.createEntityManagerFactory("CORREDOR").createEntityManager();
+            LocalDate fechaN = LocalDate.parse(txtFechaNac.getText());
+            CorredorProfesional cP = new CorredorProfesional(txtNombreCorredor.getText(),fechaN,
+                    Integer.parseInt(txtTrofeos.getText()),txtClub.getText());
+            em.getTransaction().begin();
+            em.persist(cP);
+            em.getTransaction().commit();
+    }
+    private void crearCorredor(){
+         em = Persistence.createEntityManagerFactory("CORREDOR").createEntityManager();
+            LocalDate fechaN = LocalDate.parse(txtFechaNac.getText());
+            Corredor c = new Corredor(txtNombreCorredor.getText(),fechaN);
+            em.getTransaction().begin();
+            em.persist(c);
+            em.getTransaction().commit();
+    }
     private void btnAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaActionPerformed
         // TODO add your handling code here:
-        if(pnlAmateur.isEnabled()){
-            em = Persistence.createEntityManagerFactory("CORREDOR").createEntityManager();
-            CorredorAmateur c2 = new CorredorAmateur(txtNombreCorredor.getText(),txtFechaNac.getText(),);
-        }
+         if(pnlAmateur.isEnabled()){
+             crearCorredorAmateur();
+         }else if(pnlProfesional.isEnabled()){
+             crearCorredorProfesional();
+         }else if(!pnlAmateur.isEnabled() && !pnlProfesional.isEnabled()){
+             crearCorredor();
+         }else{
+             JOptionPane.showMessageDialog(this, "No has seleccionado un tipo de corredor",
+                     "Tipo de corredor??",JOptionPane.ERROR_MESSAGE);
+         }
+ 
     }//GEN-LAST:event_btnAltaActionPerformed
 
     
@@ -332,8 +370,10 @@ public class frmAltaCorredor extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmAltaCorredor().setVisible(true);
+                
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

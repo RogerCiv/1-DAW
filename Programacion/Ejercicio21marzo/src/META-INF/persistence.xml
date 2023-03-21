@@ -12,7 +12,7 @@
       * RESOURCE_LOCAL: tenemos un proyecto que empieza de cero.
       * JTA: nuestro proyecto usa un framework que necesita acceder a la unidad de persistencia.
  -->
-    <persistence-unit name="CARRERAS" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="CORREDOR" transaction-type="RESOURCE_LOCAL">
       <!-- provider: Indica el tipo de ORM sobre el que trabajará JPA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- ahora configuramos el provider seleccionado -->
@@ -20,7 +20,7 @@
             <!-- driver JDBC que usará JPA -->
             <property name="connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <!-- cadena de conexión JDBC para que JPA se conecte a la base de datos -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ALUMNOS_DAW"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ALUMNO_DAW"/>
             <!-- variante de SQL que usará JPA para generar las consultas. Valores típicos para MySQL:
               * org.hibernate.dialect.MariaDB53Dialect
               * org.hibernate.dialect.MySQLDialect -->
@@ -30,13 +30,13 @@
                 * update: JPA no borra nada, pero modifica la BD según lo crea conveniente (por ejemplo, si necesita crear nuevas tablas)
                 * none: JPA no hace nada e intentará adaptarse a las tablas de una BD ya existente
             -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!-- indica si deberá mostrarse en el output el SQL generado por JPA -->
             <property name="hibernate.show_sql" value="true"/>
             <!-- nombre de usuario para acceder a la BD -->
-            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.user" value="programacion"/>
             <!-- contraseña del usuario -->
-            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.password" value="java"/>
         </properties>
     </persistence-unit>
 </persistence>

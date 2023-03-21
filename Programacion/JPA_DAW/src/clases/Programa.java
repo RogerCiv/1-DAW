@@ -2,35 +2,70 @@
 package clases;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 /*
 Ejercicio para Martes 21:
-Clase Libro
-- String titulo
-- String autor
-- int numeroPaginas
-+Libro() // Obligatorio para JPA
-+ Libro(String t, String a, int np)
-+ getters y setters para todo
 
-Hacer un programa que tenga estas opciones:
-1.-Crear nuevo libro ---- Te prgeunta todo, y graba un libro en la unidad de persistencia
-2.- Consultar libros por autor -- te pregunta el nombre de un autor y te muestra todos sus libros
-3.- Consulta libros grandes --- muestra el titulo de todos los libros que tienen mas de 400 paginas
-4.- Actualizar libro -> te pregunta el titilo del libro y te permite actualizar su numero de paginas.
-5.- Salir.
 */
 public class Programa {
+    public static void main(String[] args) {
+        // este main llama al que quieras para que se ejecute
+        main7(args);
+    }
+    
+    // creamos un corredor de cada tipo
+    public static void main7(String[] args) {
+        // main(args);
+         EntityManager em= Persistence.createEntityManagerFactory("CARRERAS").createEntityManager();
+         
+         Corredor c1 = new Corredor("Manuel",LocalDate.of(2000, Month.MARCH, 12));
+         CorredorAmateur c2 = new CorredorAmateur("Luis",LocalDate.of(2005,06,04),29,8);
+         CorredorProfesional c3 = new CorredorProfesional("Ismale",LocalDate.of(1998,3,3),1,"IES HLANZ");
+         
+         em.getTransaction().begin();
+         em.persist(c1);
+         em.persist(c2);
+         em.persist(c3);
+         em.getTransaction().commit();
+         
+         
+         em.close();
+    }
+    
+    /*
+        Vamos a consultar los corredores con el nombre que el usuario inrtoduzca por teclado,
+        usando TypedQuery (Forma no vulnerable)
+    */
+    public static void main6(String[] args) {
+        EntityManager em= Persistence.createEntityManagerFactory("CARRERAS").createEntityManager();
+        
+        System.out.println("Nombre del corredor: ");
+        String nombre = new Scanner(System.in).nextLine();
+        
+        Query consulta = em.createQuery("SELECT c FROM Corredor c WHERE c.nombre = ?1");
+        consulta.setParameter(1,nombre);
+        List<Corredor> listaC = consulta.getResultList();
+        for(Corredor c : listaC){
+            System.out.println(c.getNombre()+" "+c.getFechaNacimiento());
+        }
+
+        em.close();
+    }
+    
+    
+    
     /*
         Vamos a modificar el nombre de alvaro a "Alvaro Manuel" 
         y ademas vamos a borrar el objeto con id 3.
     */
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
         EntityManager em= Persistence.createEntityManagerFactory("CARRERAS").createEntityManager();
         
         //Empezamos recuperamos el objeto que necesitamos, con JPQL

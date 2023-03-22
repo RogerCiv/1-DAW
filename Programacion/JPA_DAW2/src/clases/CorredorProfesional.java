@@ -4,10 +4,16 @@ package clases;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 @Entity
 public class CorredorProfesional extends Corredor implements Serializable{
     private int numeroTrofeos;
     private String club;
+    
+    @OneToOne
+    private Carnet carnet;
+
+ 
     
     public CorredorProfesional(){
         
@@ -34,6 +40,13 @@ public class CorredorProfesional extends Corredor implements Serializable{
     public void setClub(String club) {
         this.club = club;
     }
-    
+       public Carnet getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(Carnet carnet) {
+        this.carnet = carnet;
+    }
+       
     
 }

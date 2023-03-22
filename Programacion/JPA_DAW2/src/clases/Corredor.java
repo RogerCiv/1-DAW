@@ -3,11 +3,16 @@ package clases;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 /* Cuando quiera que una clase se guarde en la BD jago estsos pasos:
 1) Pongo @Entity a la clase
 2) La clase debe implementar la interfaz Serializable.
@@ -26,6 +31,12 @@ public class Corredor implements Serializable {
     private String nombre;
     
     private LocalDate fechaNacimiento;
+    
+    @ManyToOne
+    private Equipo equipo;
+    
+    @ManyToMany
+    private List<Carrera> carrera;
   
     public Corredor(){
         
@@ -34,6 +45,7 @@ public class Corredor implements Serializable {
     public Corredor(String n, LocalDate fn){
         nombre = n ;
         fechaNacimiento = fn;
+        carrera = new ArrayList<>();
     }
 
     public int getId() {
@@ -59,6 +71,23 @@ public class Corredor implements Serializable {
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
+    }
+
+    public List<Carrera> getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(List<Carrera> carrera) {
+        this.carrera = carrera;
+    }
+    
     
 
 }

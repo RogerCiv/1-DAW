@@ -33,4 +33,39 @@ CREATE VIEW vista_fabricante_productos
 AS SELECT * FROM fabricante_productos;
 
 -- Ejercicio 07
+DELETE FROM producto WHERE nombre = "Xiaomi";
+
+
+-- Ejercicio 08
+
+DELETE FROM producto WHERE nombre = "Asus";
+
+-- Ejercicio 10
+
+UPDATE fabricante SET id = 30 WHERE nombre = "Huawei";
+
+-- Ejercicio 11
+
+/*
+Se deberia de haber habilitado la opcion de ON UPDATE CASCADE al
+crear la tabla.
+*/
+
+-- Ejercicio 12
+
+DELETE FROM producto WHERE nombre LIKE '%impresora%' AND precio < 200;
+
+-- Ejercicio 13
+UPDATE producto SET precio = precio*1.05 
+WHERE id_fabricante IN (SELECT id
+                        FROM fabricante
+                         WHERE nombre LIKE '_e%');
+
+-- Ejercicio 14
+UPDATE fabricante SET nombre = CONCAT(nombre, '*') 
+WHERE id IN ( SELECT id_fabricante 
+                FROM producto GROUP BY id_fabricante 
+                HAVING AVG(precio) > 200); 
+
+-- Ejercicio 15
 

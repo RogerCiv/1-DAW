@@ -1,6 +1,15 @@
 
 package clases;
 
+/**
+ * JAVA DOC
+ * 
+ * @author: Yo
+ * @Version: 1.0v
+ * @see: Corredor
+ */
+
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -41,16 +50,31 @@ public class Corredor implements Serializable {
     public Corredor(){
         
     }
+    /**
+     * Creamos el constructor para corredor
+     * @param n nombre del corredor
+     * @param fn fecha de nacimiento del corredor
+     */
     //Este constructor crea un corredor con el nombre y fecha de nacimiento pasada como parametro
     public Corredor(String n, LocalDate fn){
         nombre = n ;
         fechaNacimiento = fn;
         carrera = new ArrayList<>();
     }
+    
+    /**
+     * Metodo que devuelve el id del corredor
+     * @return 
+     */
 
     public int getId() {
         return id;
     }
+    
+    /**
+     * Devuelve el nombre del corredor
+     * @return 
+     */
 
     public String getNombre() {
         return nombre;
@@ -59,19 +83,34 @@ public class Corredor implements Serializable {
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
-
+    /**
+     * Setter para poner la ID al corredor
+     * @param id 
+     */
     public void setId(int id) {
         this.id = id;
     }
-
+    /**
+     * Setter para poner el nombre al corredor
+     * @param nombre 
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    
+    /**
+     * Setter para ponerle la fecha de Nacimiento (LocalDate) al corredor
+     * @param fechaNacimiento 
+     */
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    /**
+     * Getter que devuelve el Equipo de dicho corredor
+     * @return 
+     */
     public Equipo getEquipo() {
         return equipo;
     }

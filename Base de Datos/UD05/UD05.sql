@@ -58,13 +58,13 @@ DELETE FROM producto WHERE nombre LIKE '%impresora%' AND precio < 200;
 UPDATE producto SET precio = precio*1.05 
 WHERE id_fabricante IN (SELECT id
                         FROM fabricante
-                         WHERE nombre LIKE '_e%');
+                        WHERE nombre LIKE '_e%');
 
 -- Ejercicio 14
 UPDATE fabricante SET nombre = CONCAT(nombre, '*') 
 WHERE id IN ( SELECT id_fabricante 
-                FROM producto GROUP BY id_fabricante 
-                HAVING AVG(precio) > 200); 
+              FROM producto GROUP BY id_fabricante 
+              HAVING AVG(precio) > 200); 
 
 -- Ejercicio 15
 

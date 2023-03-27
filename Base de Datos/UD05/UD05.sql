@@ -2,7 +2,6 @@
 
 INSERT INTO fabricante(id,nombre) VALUES (10,"Apple"); 
 
-
 -- Ejercicio 02
 
 INSERT INTO fabricante(nombre) VALUES ("MSI"), ("TP-Link"); 
@@ -118,3 +117,18 @@ WHERE codigo IN (SELECT pelicula
 
 -- Ejercicio 23
 
+UPDATE pelicula SET precio_alquiler = precio_alquiler + 0.20
+WHERE codigo IN (SELECT pelicula
+                 FROM copia_pelicula
+                 GROUP BY pelicula
+                 HAVING COUNT(*) >= 2);
+
+
+
+-- Ejerccio 24
+
+DELETE FROM copia_pelicula
+WHERE estado LIKE "ESTROPEADA" 
+AND pelicula IN (SELECT codigo
+                 FROM pelicula
+                 WHERE titulo LIKE "FROZEN");

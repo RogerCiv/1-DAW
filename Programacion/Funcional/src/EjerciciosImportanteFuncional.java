@@ -19,10 +19,10 @@ public class EjerciciosImportanteFuncional {
         
         // Guarda en una lista todos los empleados que sean programadores
         System.out.println("Ejercicio 01 ---");
-        Stream.of(a,b,c,d)
+        List<Empleado> programadores = Stream.of(a,b,c,d)
                 .filter(e -> e.getPuesto().equalsIgnoreCase("Programador"))
-                .toList()
-                .forEach(System.out::println);
+                .toList();
+                //.forEach(System.out::println);
         
         // haz un programa que muestre los nombres de todos los programadores
         // ordenados de menos a mas sueldo

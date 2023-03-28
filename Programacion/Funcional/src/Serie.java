@@ -15,9 +15,9 @@ public static Optional<Serie> parse(String s) // el string tiene este formato: t
 */
 
 public record Serie(String titulo, int añoInicio,int añoFinalizacion) {
-    
-    
     public static Optional<Serie> parse(String s){
+        Optional<Serie> r = Optional.empty();
         
+        return r;
     }
 }

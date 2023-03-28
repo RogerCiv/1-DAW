@@ -1,4 +1,9 @@
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
+
 // Ejercicio 01: hay que hacerlo sin usar expresiones regulares
 
 /*
@@ -21,6 +26,13 @@ public static Optional<Serie> parse(String s) // el string tiene este formato: t
 
 public class Ejercicios {
     public static void main(String[] args) {
+        Function<List<List<String>>, List<String>> f = metalista -> 
+        {
+            List<String> r = new ArrayList<>();
+            metalista.forEach(sublista -> r.addAll(sublista));
+            return r;
+        };
+        
         
     }
 }

@@ -3,12 +3,17 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Month;
 import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -155,6 +160,33 @@ public class EjemplosTransformacion {
          
          Runnable  t16 = () -> System.out.println("HOY ES JUEVES");;
          t16.run();
+         
+         ///Repaso semana
+         // quiero transformar un numero en su cuadrado
+         Function<Integer,Integer> t17 = n -> n*n ;
+         // Cuando quieres transformar de un tipo al mismo tipo (integer a integer) se usa UnaryOperator
+         UnaryOperator<Integer> t18 = n -> n*n;
+         
+         
+         // Transformacion que transforme una persona en true si es mayor de edad
+         
+         Predicate<Persona> t19 = p -> p.getEdad() >= 18;
+         System.out.println(t19.test(new Persona("Pepe",17)));
+         
+         // transformacion que coge dos numeros y los transforma en su suma
+         
+         BiFunction<Integer,Integer,Integer> t20 = (a,b) -> a+b;
+         System.out.println(t20.apply(5, 10));
+         
+         // Transformacion que recibe una persona y un numero y
+         // los transforma en true si la persona tiene mas años que ese numero.
+         
+         BiPredicate<Persona,Integer> t21 = (p,i) ->  p.getEdad() > i ;
+         
+         //Transformacion que recibe una fecha y una hora y las muestra en la pantalla
+         
+         BiConsumer<LocalDate,LocalTime> t22 = (ld,lt) -> System.out.println(ld+" "+lt);
+         
          
                 
       }

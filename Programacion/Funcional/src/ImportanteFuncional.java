@@ -52,22 +52,22 @@ public class ImportanteFuncional {
            
            
            //  creamos 4 empleado
-           Empleado a = new Empleado("Antonio", "programador", 1000);
-           Empleado b = new Empleado("manuel","Analista",2000);
-           Empleado c = new Empleado("Ana", "programador", 1000);
-           Empleado d = new Empleado("lucia", "Jefe proyecto", 5000);
+           EMPLEADODOSMOVER a = new EMPLEADODOSMOVER("Antonio", "programador", 1000);
+           EMPLEADODOSMOVER b = new EMPLEADODOSMOVER("manuel","Analista",2000);
+           EMPLEADODOSMOVER c = new EMPLEADODOSMOVER("Ana", "programador", 1000);
+           EMPLEADODOSMOVER d = new EMPLEADODOSMOVER("lucia", "Jefe proyecto", 5000);
            
            // p funcional para consegior una lista de empleados
            // ordenados de menor a mayor sueldo
            
            
-           List<Empleado> lista = Stream.of(a,b,c,d)
+           List<EMPLEADODOSMOVER> lista = Stream.of(a,b,c,d)
                    .sorted()
                    .toList();
            
            // ordenar lo anterior pero por orden alfabetico nombres
            
-            List<Empleado> listaN = Stream.of(a,b,c,d)
+            List<EMPLEADODOSMOVER> listaN = Stream.of(a,b,c,d)
                    .sorted((e1,e2) -> e1.getNombre().compareTo(e2.getNombre()))
                    .toList();       
             

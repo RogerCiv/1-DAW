@@ -1,13 +1,15 @@
 
+import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 
 public class EjerciciosImportanteFuncional {
     public static void main(String[] args) {
-           Empleado a = new Empleado("Antonio", "programador", 1000);
-           Empleado b = new Empleado("manuel","Analista",2000);
-           Empleado c = new Empleado("Ana", "programador", 1000);
-           Empleado d = new Empleado("lucia", "Jefe proyecto", 5000);
+           EMPLEADODOSMOVER a = new EMPLEADODOSMOVER("Antonio", "programador", 1000);
+           EMPLEADODOSMOVER b = new EMPLEADODOSMOVER("manuel","Analista",2000);
+           EMPLEADODOSMOVER c = new EMPLEADODOSMOVER("Ana", "programador", 1000);
+           EMPLEADODOSMOVER d = new EMPLEADODOSMOVER("lucia", "Jefe proyecto", 5000);
            
         
         // sube 100€ a los empleados que ganan menos de 1500€
@@ -19,7 +21,7 @@ public class EjerciciosImportanteFuncional {
         
         // Guarda en una lista todos los empleados que sean programadores
         System.out.println("Ejercicio 01 ---");
-        List<Empleado> programadores = Stream.of(a,b,c,d)
+        List<EMPLEADODOSMOVER> programadores = Stream.of(a,b,c,d)
                 .filter(e -> e.getPuesto().equalsIgnoreCase("Programador"))
                 .toList();
                 //.forEach(System.out::println);
@@ -43,6 +45,21 @@ public class EjerciciosImportanteFuncional {
           
           // haz un programa que muestre en pantalla todos los numeros pares entre 10 y 50
           System.out.println("Ejercicio 04 ----");
+          
+          IntStream.range(10, 50)
+                  .filter(i -> i%2 == 0)
+                  .forEach(System.out::println);
+          
+          // haz programa que pida por teclado el nombre de un empleado y nos muestre todos sus datos
+          System.out.println("Ejercicio 05 ----- ");
+          String nombre = "Antonio";
+          Stream.of(a,b,c,d)
+                  .filter(e -> e.getNombre().equals(nombre))
+                  .findAny()
+                  .ifPresentOrElse(
+                          e -> System.out.println(e.getNombre()+" "+e.getPuesto()+" "+e.getSueldo()),
+                          () -> System.out.println("NO")
+                  );
         
     }
 }

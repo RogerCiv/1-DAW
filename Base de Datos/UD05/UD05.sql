@@ -85,35 +85,32 @@ INSERT INTO alquiler (copia_pel, socio, fec_alquila) VALUES (105, 1007, CURDATE(
 
 -- Ejercicio 18
 
-UPDATE copia_pelicula SET estado="ESTROPEADA", observacion="Rayado"
-WHERE id_copia=101;
+UPDATE copia_pelicula SET estado = "ESTROPEADA" , observacion = "Rayado"
+WHERE id_copia = 101;
 
 -- Ejercicio 19
 
-DELETE FROM pelicula WHERE titulo="El Orfanato";
+DELETE FROM pelicula WHERE titulo = "El Orfanato";
 
 -- Ejercicio 20
 
-INSERT INTO pelicula VALUES ("ESP", "Probando123", 118, 2020, "Acción", 3);
+INSERT INTO pelicula VALUES ("JP", "OUTRAGE", 109, 2010, "Accion");
 
-INSERT INTO copia_pelicula  VALUES (113, "FUNCIONA", null, "ESP");
-INSERT INTO copia_pelicula  VALUES (114, "FUNCIONA", null, "ESP");
+INSERT INTO copia_pelicula  VALUES (120, "FUNCIONA", null, "JP");
+INSERT INTO copia_pelicula  VALUES (121, "FUNCIONA", null, "JP");
+
 
 -- Ejercicio 21
+
+UPDATE pelicula SET genero = "Dibujos"
+WHERE genero = "Animacion";
+
+-- Ejercicio 22
 
 DELETE FROM socio
 WHERE num_socio IN (SELECT socio
                     FROM alquiler
                     WHERE fec_devolucion < "2014-12-01");
-
-
--- Ejercicio 22
-
-UPDATE pelicula SET precio_alquiler = precio_alquiler + 0.20
-WHERE codigo IN (SELECT pelicula
-                 FROM copia_pelicula
-                 GROUP BY pelicula
-                 HAVING COUNT(*) >= 2);
 
 -- Ejercicio 23
 
@@ -122,8 +119,6 @@ WHERE codigo IN (SELECT pelicula
                  FROM copia_pelicula
                  GROUP BY pelicula
                  HAVING COUNT(*) >= 2);
-
-
 
 -- Ejerccio 24
 

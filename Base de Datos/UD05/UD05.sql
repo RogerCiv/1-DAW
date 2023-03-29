@@ -96,8 +96,8 @@ DELETE FROM pelicula WHERE titulo = "El Orfanato";
 
 INSERT INTO pelicula VALUES ("JP", "OUTRAGE", 109, 2010, "Accion");
 
-INSERT INTO copia_pelicula  VALUES (120, "FUNCIONA", null, "JP");
-INSERT INTO copia_pelicula  VALUES (121, "FUNCIONA", null, "JP");
+INSERT INTO copia_pelicula  
+VALUES (120, "FUNCIONA", null, "JP") , (121, "FUNCIONA", null, "JP");
 
 
 -- Ejercicio 21
@@ -110,7 +110,7 @@ WHERE genero = "Animacion";
 DELETE FROM socio
 WHERE num_socio IN (SELECT socio
                     FROM alquiler
-                    WHERE fec_devolucion < "2014-12-01");
+                    WHERE fec_alquila < "2014-12-01" AND fec_devolucion IS NOT NULL);
 
 -- Ejercicio 23
 
@@ -118,12 +118,12 @@ UPDATE pelicula SET precio_alquiler = precio_alquiler + 0.20
 WHERE codigo IN (SELECT pelicula
                  FROM copia_pelicula
                  GROUP BY pelicula
-                 HAVING COUNT(*) >= 2);
+                 HAVING COUNT(*) > 2);
 
 -- Ejerccio 24
 
 DELETE FROM copia_pelicula
-WHERE estado LIKE "ESTROPEADA" 
+WHERE estado = "Estropeada" 
 AND pelicula IN (SELECT codigo
                  FROM pelicula
-                 WHERE titulo LIKE "FROZEN");
+                 WHERE titulo =  "%Frozen%");
